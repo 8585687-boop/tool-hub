@@ -1,0 +1,116 @@
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import Toolbar from '../../components/Toolbar'
+import LineOutput from '../../components/LineOutput'
+import { formatYAML, yamlToJson } from '../../tools/format/yamlFormatter'
+
+export default function YamlFormatter() {
+  const [input, setInput] = useState('')
+  const [output, setOutput] = useState('')
+  const [error, setError] = useState(null)
+  const [status, setStatus] = useState('idle')
+  const [viewMode, setViewMode] = useState('yaml')
+  const [fullscreen, setFullscreen] = useState(false)
+
+  useEffect(() => {
+    if (!input.trim()) {
+      setOutput('')
+      setError(null)
+      setStatus('idle')
+      return
+    }
+
+    const fn = viewMode === 'json' ? yamlToJson : formatYAML
+    const res = fn(input)
+
+    if (res.success) {
+      setOutput(res.result)
+      setError(null)
+      setStatus('valid')
+    } else {
+      setOutput('')
+      setError(res.error)
+      setStatus('invalid')
+    }
+  }, [input, viewMode])
+
+  const handleClear = () => {
+    setInput('')
+    setOutput('')
+    setError(null)
+    setStatus('idle')
+  }
+
+  const statusClass = status === 'valid' ? 'valid' : status === 'invalid' ? 'invalid' : 'idle'
+  const statusText = status === 'valid' ? 'Valid' : status === 'invalid' ? 'Invalid' : 'Ready'
+
+  return (
+    <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
+      <div className="workspace-header">
+        <div className="workspace-info">
+          <Link to="/" className="workspace-back">← Back</Link>
+          <span className="workspace-title">YAML Formatter</span>
+          <span className="workspace-desc">Format/validate YAML, convert to JSON</span>
+          <span className={`workspace-status ${statusClass}`}>{statusText}</span>
+        </div>
+        <div className="toolbar">
+          <div className="hash-algo-tabs">
+            <button
+              className={`hash-algo-tab ${viewMode === 'yaml' ? 'active' : ''}`}
+              onClick={() => setViewMode('yaml')}
+            >YAML</button>
+            <button
+              className={`hash-algo-tab ${viewMode === 'json' ? 'active' : ''}`}
+              onClick={() => setViewMode('json')}
+            >JSON</button>
+          </div>
+          <Toolbar
+            copyText={output}
+            onClear={handleClear}
+            onFullscreen={() => setFullscreen(!fullscreen)}
+            isFullscreen={fullscreen}
+          />
+        </div>
+      </div>
+
+      <div className="workspace-body">
+        <div className="workspace-panel">
+          <div className="panel-header">
+            <span className="panel-label">Input</span>
+          </div>
+          <div className="panel-body">
+            <textarea
+              className="editor-input"
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              placeholder="Paste your YAML here, e.g.&#10;name: John&#10;age: 30&#10;skills:&#10;  - React&#10;  - Node.js"
+              spellCheck={false}
+            />
+          </div>
+        </div>
+
+        <div className="workspace-panel">
+          <div className="panel-header">
+            <span className="panel-label">Output ({viewMode.toUpperCase()})</span>
+          </div>
+          <div className="panel-body">
+            {error ? (
+              <div className="error-detail">
+                <div className="error-detail-header">
+                  <span className="error-detail-icon">✕</span>
+                  <span>Invalid YAML</span>
+                </div>
+                <div className="error-detail-section">
+                  <div className="error-detail-section-title">Error</div>
+                  <div className="error-detail-text">{error}</div>
+                </div>
+              </div>
+            ) : (
+              <LineOutput text={output} />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
