@@ -34,32 +34,32 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="json-formatter" element={<JsonFormatter />} />
-          <Route path="json-validator" element={<JsonValidator />} />
-          <Route path="json-minifier" element={<JsonMinifier />} />
-          <Route path="json-beautifier" element={<JsonBeautifier />} />
-          <Route path="base64-encoder" element={<Base64Encoder />} />
-          <Route path="base64-decoder" element={<Base64Decoder />} />
-          <Route path="url-encoder" element={<UrlEncoder />} />
-          <Route path="url-decoder" element={<UrlDecoder />} />
-          <Route path="jwt-decoder" element={<JwtDecoder />} />
-          <Route path="password-generator" element={<PasswordGenerator />} />
-          <Route path="uuid-generator" element={<UuidGenerator />} />
-          <Route path="hash-generator" element={<HashGenerator />} />
-          <Route path="word-counter" element={<WordCounter />} />
-          <Route path="character-counter" element={<CharacterCounter />} />
-          <Route path="case-converter" element={<CaseConverter />} />
-          <Route path="text-diff-checker" element={<TextDiffChecker />} />
-          <Route path="lorem-ipsum-generator" element={<LoremGenerator />} />
-          <Route path="timestamp-converter" element={<TimestampConverter />} />
-          <Route path="regex-tester" element={<RegexTester />} />
-          <Route path="yaml-formatter" element={<YamlFormatter />} />
-          <Route path="xml-formatter" element={<XmlFormatter />} />
-          <Route path="markdown-previewer" element={<MarkdownPreviewer />} />
-          <Route path="color-converter" element={<ColorConverter />} />
-          <Route path="csv-to-json" element={<CsvToJson />} />
-          <Route path="number-base-converter" element={<NumberBaseConverter />} />
-          <Route path="crc32-calculator" element={<Crc32Calculator />} />
+          <Route path="tools/json-formatter" element={<JsonFormatter />} />
+          <Route path="tools/json-validator" element={<JsonValidator />} />
+          <Route path="tools/json-minifier" element={<JsonMinifier />} />
+          <Route path="tools/json-beautifier" element={<JsonBeautifier />} />
+          <Route path="tools/base64-encoder" element={<Base64Encoder />} />
+          <Route path="tools/base64-decoder" element={<Base64Decoder />} />
+          <Route path="tools/url-encoder" element={<UrlEncoder />} />
+          <Route path="tools/url-decoder" element={<UrlDecoder />} />
+          <Route path="tools/jwt-decoder" element={<JwtDecoder />} />
+          <Route path="tools/password-generator" element={<PasswordGenerator />} />
+          <Route path="tools/uuid-generator" element={<UuidGenerator />} />
+          <Route path="tools/hash-generator" element={<HashGenerator />} />
+          <Route path="tools/word-counter" element={<WordCounter />} />
+          <Route path="tools/character-counter" element={<CharacterCounter />} />
+          <Route path="tools/case-converter" element={<CaseConverter />} />
+          <Route path="tools/text-diff-checker" element={<TextDiffChecker />} />
+          <Route path="tools/lorem-ipsum-generator" element={<LoremGenerator />} />
+          <Route path="tools/timestamp-converter" element={<TimestampConverter />} />
+          <Route path="tools/regex-tester" element={<RegexTester />} />
+          <Route path="tools/yaml-formatter" element={<YamlFormatter />} />
+          <Route path="tools/xml-formatter" element={<XmlFormatter />} />
+          <Route path="tools/markdown-previewer" element={<MarkdownPreviewer />} />
+          <Route path="tools/color-converter" element={<ColorConverter />} />
+          <Route path="tools/csv-to-json" element={<CsvToJson />} />
+          <Route path="tools/number-base-converter" element={<NumberBaseConverter />} />
+          <Route path="tools/crc32-calculator" element={<Crc32Calculator />} />
         </Route>
       </Routes>
     </BrowserRouter>

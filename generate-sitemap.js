@@ -19,7 +19,7 @@ let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 
 // 自动生成所有工具页面
 tools.forEach(tool => {
-  const url = `${BASE_URL}/tool/${tool.id}`;
+  const url = `${BASE_URL}${tool.path}`;
   sitemap += `
 <url>
 <loc>${url}</loc>
