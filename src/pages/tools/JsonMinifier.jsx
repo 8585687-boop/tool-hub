@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { minifyJSON } from '../../tools/json/minifier'
 import { parseJsonError } from '../../tools/json/errorParser'
+
+const tool = tools.find(t => t.id === 'json-minifier')
 
 export default function JsonMinifier() {
   const [input, setInput] = useState('')
@@ -22,7 +25,6 @@ export default function JsonMinifier() {
       setErrorDetail(null)
       setStatus('valid')
     } else {
-      // minifyJSON returns raw error string, re-parse with context
       try {
         JSON.parse(input)
       } catch (e) {
@@ -42,6 +44,8 @@ export default function JsonMinifier() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="JSON Minifier"
       description="Compress JSON, remove whitespace"
       status={status}

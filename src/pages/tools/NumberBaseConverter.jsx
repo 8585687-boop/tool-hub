@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { convertBase } from '../../tools/number/baseConverter'
 
 const BASE_OPTIONS = Array.from({ length: 61 }, (_, i) => i + 2)
@@ -13,6 +15,8 @@ const COMMON_BASES = [
   { value: 36, label: 'Base36 (36)' },
   { value: 62, label: 'Base62 (62)' },
 ]
+
+const tool = tools.find(t => t.id === 'number-base-converter')
 
 export default function NumberBaseConverter() {
   const [input, setInput] = useState('')
@@ -38,6 +42,7 @@ export default function NumberBaseConverter() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Number Base Converter</span>

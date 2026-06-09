@@ -1,7 +1,11 @@
 import { useState, useMemo, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { computeDiff } from '../../tools/text/diffUtils'
+
+const tool = tools.find(t => t.id === 'text-diff-checker')
 
 function DiffEditor({ value, onChange, diffLines, type, placeholder, gutterRef, textareaRef, overlayRef, onScroll, syncScrollEnabled, peerTextareaRef }) {
   const lineCount = value ? value.split('\n').length : 1
@@ -106,6 +110,7 @@ export default function TextDiffChecker() {
 
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
+      <SEO title={tool.seoTitle} description={tool.seoDescription} />
       <div className="workspace-header">
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>

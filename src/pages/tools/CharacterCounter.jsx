@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { countCharacters } from '../../tools/text/characterCounter'
+
+const tool = tools.find(t => t.id === 'character-counter')
 
 export default function CharacterCounter() {
   const [input, setInput] = useState('')
@@ -24,6 +28,7 @@ export default function CharacterCounter() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Character Counter</span>

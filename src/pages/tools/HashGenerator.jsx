@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { generateHash } from '../../tools/security/hashGenerator'
 
 const ALGORITHMS = ['SHA-256', 'SHA-384', 'SHA-512']
+const tool = tools.find(t => t.id === 'hash-generator')
 
 export default function HashGenerator() {
   const [input, setInput] = useState('')
@@ -47,6 +50,7 @@ export default function HashGenerator() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Hash Generator</span>

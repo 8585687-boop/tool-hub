@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { convertColor } from '../../tools/converter/colorConverter'
 import { copyText } from '../../tools/utils/copyText'
 
 const FORMATS = ['HEX', 'RGB', 'HSL', 'CMYK']
+const tool = tools.find(t => t.id === 'color-converter')
 
 export default function ColorConverter() {
   const [input, setInput] = useState('#6366F1')
@@ -44,6 +47,7 @@ export default function ColorConverter() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Color Converter</span>

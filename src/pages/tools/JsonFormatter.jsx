@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { formatJson, minifyJson } from '../../tools/json/formatter'
 import { parseJsonError } from '../../tools/json/errorParser'
+
+const tool = tools.find(t => t.id === 'json-formatter')
 
 export default function JsonFormatter() {
   const [input, setInput] = useState('')
@@ -37,6 +40,8 @@ export default function JsonFormatter() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="JSON Formatter"
       description="Format and minify JSON"
       status={status}

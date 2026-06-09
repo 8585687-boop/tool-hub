@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { decodeUrl } from '../../tools/url/urlDecoder'
+
+const tool = tools.find(t => t.id === 'url-decoder')
 
 export default function UrlDecoder() {
   const [input, setInput] = useState('')
@@ -36,6 +39,8 @@ export default function UrlDecoder() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="URL Decoder"
       description="Decode URL-encoded text"
       status={status}

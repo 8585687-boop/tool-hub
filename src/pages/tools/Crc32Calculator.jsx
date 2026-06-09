@@ -1,10 +1,13 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { calcCRC32 } from '../../tools/crc/crc32'
 
 const VARIANTS = ['CRC-32', 'CRC-32C', 'CRC-32/BZIP2', 'CRC-32/JAMCRC']
 const FORMATS = ['Both', 'Hex', 'Dec']
+const tool = tools.find(t => t.id === 'crc32-calculator')
 
 export default function Crc32Calculator() {
   const [input, setInput] = useState('')
@@ -29,6 +32,7 @@ export default function Crc32Calculator() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">CRC32 Calculator</span>

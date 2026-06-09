@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { beautifyJSON } from '../../tools/json/beautifier'
 import { parseJsonError } from '../../tools/json/errorParser'
+
+const tool = tools.find(t => t.id === 'json-beautifier')
 
 export default function JsonBeautifier() {
   const [input, setInput] = useState('')
@@ -41,6 +44,8 @@ export default function JsonBeautifier() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="JSON Beautifier"
       description="Beautify JSON with 4-space indent"
       status={status}

@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { formatYAML, yamlToJson } from '../../tools/format/yamlFormatter'
+
+const tool = tools.find(t => t.id === 'yaml-formatter')
 
 export default function YamlFormatter() {
   const [input, setInput] = useState('')
@@ -47,6 +51,7 @@ export default function YamlFormatter() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">YAML Formatter</span>

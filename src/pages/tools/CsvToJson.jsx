@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { csvToJson } from '../../tools/convert/csvToJson'
 import { downloadFile } from '../../tools/utils/downloadFile'
@@ -16,6 +18,8 @@ const DEFAULT_CSV = `name,age,city
 Alice,30,New York
 Bob,25,London
 Charlie,35,Paris`
+
+const tool = tools.find(t => t.id === 'csv-to-json')
 
 export default function CsvToJson() {
   const [input, setInput] = useState(DEFAULT_CSV)
@@ -41,6 +45,7 @@ export default function CsvToJson() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">CSV to JSON</span>

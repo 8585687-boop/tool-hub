@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { validateJson } from '../../tools/json/validator'
+
+const tool = tools.find(t => t.id === 'json-validator')
 
 export default function JsonValidator() {
   const [input, setInput] = useState('')
@@ -32,6 +36,7 @@ export default function JsonValidator() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">JSON Validator</span>

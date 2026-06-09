@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { encodeUrl } from '../../tools/url/urlEncoder'
+
+const tool = tools.find(t => t.id === 'url-encoder')
 
 export default function UrlEncoder() {
   const [input, setInput] = useState('')
@@ -36,6 +39,8 @@ export default function UrlEncoder() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="URL Encoder"
       description="Encode text to URL-safe format"
       status={status}

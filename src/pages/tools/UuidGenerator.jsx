@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { generateUUID } from '../../tools/security/uuidGenerator'
 import { copyText } from '../../tools/utils/copyText'
+
+const tool = tools.find(t => t.id === 'uuid-generator')
 
 export default function UuidGenerator() {
   const [uuid, setUuid] = useState('')
@@ -35,6 +39,7 @@ export default function UuidGenerator() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">UUID Generator</span>

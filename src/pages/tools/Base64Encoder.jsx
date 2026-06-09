@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { encodeBase64 } from '../../tools/encoding/base64Encoder'
+
+const tool = tools.find(t => t.id === 'base64-encoder')
 
 export default function Base64Encoder() {
   const [input, setInput] = useState('')
@@ -36,6 +39,8 @@ export default function Base64Encoder() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="Base64 Encoder"
       description="Encode text to Base64"
       status={status}

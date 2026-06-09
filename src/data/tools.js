@@ -5,7 +5,9 @@ export const tools = [
     description: "Format JSON online",
     category: "Developer",
     path: "/json-formatter",
-    icon: "{}"
+    icon: "{}",
+    seoTitle: "JSON Formatter - Free Online JSON Formatter Tool",
+    seoDescription: "Format and beautify JSON online. Free JSON formatter with syntax highlighting and validation."
   },
   {
     id: "json-validator",
@@ -13,7 +15,9 @@ export const tools = [
     description: "Validate JSON",
     category: "Developer",
     path: "/json-validator",
-    icon: "✓"
+    icon: "✓",
+    seoTitle: "JSON Validator - Validate JSON Online Free",
+    seoDescription: "Check and validate JSON data online. Find syntax errors and invalid JSON format instantly."
   },
   {
     id: "json-minifier",
@@ -21,7 +25,9 @@ export const tools = [
     description: "Compress JSON and remove whitespace",
     category: "Developer",
     path: "/json-minifier",
-    icon: "{}"
+    icon: "{}",
+    seoTitle: "JSON Minifier - Minify JSON Online Free",
+    seoDescription: "Minify and compress JSON online. Remove whitespace and reduce JSON file size instantly."
   },
   {
     id: "json-beautifier",
@@ -29,7 +35,9 @@ export const tools = [
     description: "Beautify and format JSON online",
     category: "Developer",
     path: "/json-beautifier",
-    icon: "{}"
+    icon: "{}",
+    seoTitle: "JSON Beautifier - Beautify JSON Online Free",
+    seoDescription: "Beautify and format JSON with proper indentation. Make JSON readable and well-structured."
   },
   {
     id: "base64-encoder",
@@ -37,7 +45,9 @@ export const tools = [
     description: "Encode text to Base64 online",
     category: "Encoding",
     path: "/base64-encoder",
-    icon: "B64"
+    icon: "B64",
+    seoTitle: "Base64 Encoder - Encode Text to Base64 Online",
+    seoDescription: "Encode text and files to Base64 online for free. Convert strings and data to Base64 format instantly."
   },
   {
     id: "base64-decoder",
@@ -45,7 +55,9 @@ export const tools = [
     description: "Decode Base64 text online",
     category: "Encoding",
     path: "/base64-decoder",
-    icon: "↙"
+    icon: "↙",
+    seoTitle: "Base64 Decoder - Decode Base64 Online",
+    seoDescription: "Decode Base64 strings online for free. Convert Base64 encoded text back to normal text."
   },
   {
     id: "url-encoder",
@@ -53,7 +65,9 @@ export const tools = [
     description: "Encode text to URL-safe format",
     category: "URL Tools",
     path: "/url-encoder",
-    icon: "%"
+    icon: "%",
+    seoTitle: "URL Encoder - Encode URL Online Free",
+    seoDescription: "Encode text to URL-safe format online. Convert special characters to percent-encoded format."
   },
   {
     id: "url-decoder",
@@ -61,7 +75,9 @@ export const tools = [
     description: "Decode URL-encoded text",
     category: "URL Tools",
     path: "/url-decoder",
-    icon: "🔗"
+    icon: "🔗",
+    seoTitle: "URL Decoder - Decode URL Online Free",
+    seoDescription: "Decode URL-encoded text online. Convert percent-encoded strings back to readable text."
   },
   {
     id: "jwt-decoder",
@@ -69,7 +85,9 @@ export const tools = [
     description: "Decode and inspect JWT tokens",
     category: "Security",
     path: "/jwt-decoder",
-    icon: "🔑"
+    icon: "🔑",
+    seoTitle: "JWT Decoder - Decode JWT Token Online",
+    seoDescription: "Decode and inspect JWT tokens online. View header, payload and token information."
   },
   {
     id: "password-generator",
@@ -77,7 +95,9 @@ export const tools = [
     description: "Generate secure random passwords",
     category: "Security",
     path: "/password-generator",
-    icon: "🔒"
+    icon: "🔒",
+    seoTitle: "Password Generator - Generate Secure Passwords Online",
+    seoDescription: "Generate strong, secure random passwords online. Customize length, symbols, and character types."
   },
   {
     id: "uuid-generator",
@@ -85,7 +105,9 @@ export const tools = [
     description: "Generate UUID v4",
     category: "Security",
     path: "/uuid-generator",
-    icon: "#"
+    icon: "#",
+    seoTitle: "UUID Generator - Generate UUID v4 Online",
+    seoDescription: "Generate UUID v4 identifiers online. Create unique universal identifiers instantly."
   },
   {
     id: "hash-generator",
@@ -93,7 +115,9 @@ export const tools = [
     description: "Generate SHA-256, SHA-384, SHA-512 hashes",
     category: "Security",
     path: "/hash-generator",
-    icon: "≡"
+    icon: "≡",
+    seoTitle: "Hash Generator - SHA-256 SHA-512 Hash Online",
+    seoDescription: "Generate SHA-256, SHA-384, SHA-512 hashes online. Compute cryptographic hash values for any text."
   },
   {
     id: "word-counter",
@@ -101,7 +125,9 @@ export const tools = [
     description: "Count words, characters, and lines",
     category: "Text",
     path: "/word-counter",
-    icon: "W"
+    icon: "W",
+    seoTitle: "Word Counter - Count Words Online Free",
+    seoDescription: "Count words, characters, sentences and lines in your text. Free online word counting tool."
   },
   {
     id: "character-counter",
@@ -109,7 +135,9 @@ export const tools = [
     description: "Count characters in text",
     category: "Text",
     path: "/character-counter",
-    icon: "C"
+    icon: "C",
+    seoTitle: "Character Counter - Count Characters Online Free",
+    seoDescription: "Count characters in text online. Track character count with and without spaces."
   },
   {
     id: "case-converter",
@@ -117,7 +145,9 @@ export const tools = [
     description: "Convert text to uppercase, lowercase, title case",
     category: "Text",
     path: "/case-converter",
-    icon: "Aa"
+    icon: "Aa",
+    seoTitle: "Case Converter - Convert Text Case Online",
+    seoDescription: "Convert text to uppercase, lowercase, title case, camelCase and more. Free online case converter tool."
   },
   {
     id: "text-diff-checker",
@@ -125,7 +155,9 @@ export const tools = [
     description: "Compare two texts and find differences",
     category: "Text",
     path: "/text-diff-checker",
-    icon: "⇄"
+    icon: "⇄",
+    seoTitle: "Text Diff Checker - Compare Text Online Free",
+    seoDescription: "Compare two texts and find differences online. Highlight changes between texts instantly."
   },
   {
     id: "lorem-ipsum-generator",
@@ -133,7 +165,9 @@ export const tools = [
     description: "Generate placeholder text",
     category: "Text",
     path: "/lorem-ipsum-generator",
-    icon: "¶"
+    icon: "¶",
+    seoTitle: "Lorem Ipsum Generator - Placeholder Text Online",
+    seoDescription: "Generate Lorem Ipsum placeholder text online. Customize paragraphs, sentences and word count."
   },
   {
     id: "timestamp-converter",
@@ -141,7 +175,9 @@ export const tools = [
     description: "Unix ↔ ISO timestamp conversion",
     category: "Converter",
     path: "/timestamp-converter",
-    icon: "⏱"
+    icon: "⏱",
+    seoTitle: "Timestamp Converter - Unix Timestamp Online",
+    seoDescription: "Convert Unix timestamps to ISO dates and vice versa. Free online timestamp converter tool."
   },
   {
     id: "regex-tester",
@@ -149,7 +185,9 @@ export const tools = [
     description: "Test regex patterns with match highlighting",
     category: "Utils",
     path: "/regex-tester",
-    icon: ".*"
+    icon: ".*",
+    seoTitle: "Regex Tester - Test Regular Expressions Online",
+    seoDescription: "Test regular expressions online with real-time match highlighting. Debug and validate regex patterns."
   },
   {
     id: "yaml-formatter",
@@ -157,7 +195,9 @@ export const tools = [
     description: "Format/validate YAML, convert to JSON",
     category: "Format",
     path: "/yaml-formatter",
-    icon: "Y:"
+    icon: "Y:",
+    seoTitle: "YAML Formatter - Format YAML Online Free",
+    seoDescription: "Format and validate YAML online. Convert YAML to JSON with proper indentation and syntax checking."
   },
   {
     id: "xml-formatter",
@@ -165,7 +205,9 @@ export const tools = [
     description: "Format/validate XML, convert to JSON",
     category: "Format",
     path: "/xml-formatter",
-    icon: "<>"
+    icon: "<>",
+    seoTitle: "XML Formatter - Format XML Online Free",
+    seoDescription: "Format and validate XML online. Beautify XML with proper indentation and syntax checking."
   },
   {
     id: "markdown-previewer",
@@ -173,7 +215,9 @@ export const tools = [
     description: "GFM live rendering with tables, code blocks & TOC",
     category: "Format",
     path: "/markdown-previewer",
-    icon: "M↓"
+    icon: "M↓",
+    seoTitle: "Markdown Previewer - Preview Markdown Online",
+    seoDescription: "Preview Markdown online with GitHub Flavored Markdown rendering. Live preview with tables and code blocks."
   },
   {
     id: "color-converter",
@@ -181,7 +225,9 @@ export const tools = [
     description: "HEX/RGB/HSL/CMYK conversion",
     category: "Converter",
     path: "/color-converter",
-    icon: "🎨"
+    icon: "🎨",
+    seoTitle: "Color Converter - HEX RGB HSL Converter Online",
+    seoDescription: "Convert colors between HEX, RGB, HSL and CMYK formats. Free online color conversion tool."
   },
   {
     id: "csv-to-json",
@@ -189,7 +235,9 @@ export const tools = [
     description: "Convert CSV to JSON with custom delimiters",
     category: "Converter",
     path: "/csv-to-json",
-    icon: "↔"
+    icon: "↔",
+    seoTitle: "CSV to JSON Converter - Convert CSV Online Free",
+    seoDescription: "Convert CSV data to JSON format online. Support custom delimiters and quoted fields."
   },
   {
     id: "number-base-converter",
@@ -197,7 +245,9 @@ export const tools = [
     description: "Convert numbers between bases 2–62",
     category: "Converter",
     path: "/number-base-converter",
-    icon: "₂₁₀"
+    icon: "₂₁₀",
+    seoTitle: "Number Base Converter - Binary Hex Decimal Online",
+    seoDescription: "Convert numbers between binary, octal, decimal, hex and bases 2-62. Free online base converter."
   },
   {
     id: "crc32-calculator",
@@ -205,6 +255,8 @@ export const tools = [
     description: "Compute CRC-32 checksums",
     category: "Utils",
     path: "/crc32-calculator",
-    icon: "#"
+    icon: "#",
+    seoTitle: "CRC32 Calculator - Compute CRC-32 Checksum Online",
+    seoDescription: "Compute CRC-32 checksums online. Calculate CRC-32 hash for any text or data instantly."
   }
 ]

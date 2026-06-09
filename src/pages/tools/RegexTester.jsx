@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { testRegex } from '../../tools/utils/regexTester'
 
 const FLAGS = [
@@ -10,6 +12,8 @@ const FLAGS = [
   { key: 's', label: 'DotAll' },
   { key: 'u', label: 'Unicode' },
 ]
+
+const tool = tools.find(t => t.id === 'regex-tester')
 
 export default function RegexTester() {
   const [pattern, setPattern] = useState('')
@@ -61,6 +65,7 @@ export default function RegexTester() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Regex Tester</span>

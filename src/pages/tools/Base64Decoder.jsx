@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import ToolWorkspace from '../../components/ToolWorkspace'
+import { tools } from '../../data/tools'
 import { decodeBase64 } from '../../tools/encoding/base64Decoder'
+
+const tool = tools.find(t => t.id === 'base64-decoder')
 
 export default function Base64Decoder() {
   const [input, setInput] = useState('')
@@ -36,6 +39,8 @@ export default function Base64Decoder() {
 
   return (
     <ToolWorkspace
+      seoTitle={tool.seoTitle}
+      seoDescription={tool.seoDescription}
       title="Base64 Decoder"
       description="Decode Base64 to text"
       status={status}

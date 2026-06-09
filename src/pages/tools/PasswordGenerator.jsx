@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { generatePassword, getPasswordStrength } from '../../tools/security/passwordGenerator'
+
+const tool = tools.find(t => t.id === 'password-generator')
 
 export default function PasswordGenerator() {
   const [length, setLength] = useState(16)
@@ -41,6 +45,7 @@ export default function PasswordGenerator() {
 
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
+      <SEO title={tool.seoTitle} description={tool.seoDescription} />
       <div className="workspace-header">
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>

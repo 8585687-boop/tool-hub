@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from './Toolbar'
 import LineOutput from './LineOutput'
+import SEO from './SEO'
 
-export default function ToolWorkspace({ title, description, status, input, output, onInputChange, onClear, outputError, errorDetail, errorTitle, placeholder }) {
+export default function ToolWorkspace({ title, description, status, input, output, onInputChange, onClear, outputError, errorDetail, errorTitle, placeholder, seoTitle, seoDescription }) {
   const [fullscreen, setFullscreen] = useState(false)
 
   const handleFullscreen = () => {
@@ -16,6 +17,7 @@ export default function ToolWorkspace({ title, description, status, input, outpu
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        {seoTitle && <SEO title={seoTitle} description={seoDescription} />}
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">{title}</span>

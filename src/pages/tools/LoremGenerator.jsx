@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { generateLorem } from '../../tools/text/loremGenerator'
 
 const COUNTS = [1, 3, 5, 10]
+const tool = tools.find(t => t.id === 'lorem-ipsum-generator')
 
 export default function LoremGenerator() {
   const [count, setCount] = useState(1)
@@ -27,6 +30,7 @@ export default function LoremGenerator() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Lorem Ipsum Generator</span>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { convertTimestamp } from '../../tools/converter/timestampConverter'
 import { copyText } from '../../tools/utils/copyText'
 
@@ -10,6 +12,8 @@ const TIMEZONES = [
   'Asia/Shanghai', 'Asia/Tokyo', 'Asia/Seoul', 'Asia/Kolkata',
   'Australia/Sydney', 'Pacific/Auckland',
 ]
+
+const tool = tools.find(t => t.id === 'timestamp-converter')
 
 export default function TimestampConverter() {
   const [input, setInput] = useState('')
@@ -64,6 +68,7 @@ export default function TimestampConverter() {
 
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
+      <SEO title={tool.seoTitle} description={tool.seoDescription} />
       <div className="workspace-header">
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>

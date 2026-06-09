@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { convertCase } from '../../tools/text/caseConverter'
 
@@ -9,6 +11,8 @@ const CASES = [
   { type: 'lowercase', label: 'lowercase' },
   { type: 'title', label: 'Title Case' }
 ]
+
+const tool = tools.find(t => t.id === 'case-converter')
 
 export default function CaseConverter() {
   const [input, setInput] = useState('')
@@ -33,6 +37,7 @@ export default function CaseConverter() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Case Converter</span>

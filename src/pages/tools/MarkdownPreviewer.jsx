@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import SEO from '../../components/SEO'
+import { tools } from '../../data/tools'
 import { renderMarkdown, extractHeadings } from '../../tools/markdown/markdownPreviewer'
 import { copyText } from '../../tools/utils/copyText'
 
@@ -42,6 +44,8 @@ Inline \`code\` works too.
 3. Third item
 `
 
+const tool = tools.find(t => t.id === 'markdown-previewer')
+
 export default function MarkdownPreviewer() {
   const [input, setInput] = useState(DEFAULT_MD)
   const [fullscreen, setFullscreen] = useState(false)
@@ -60,6 +64,7 @@ export default function MarkdownPreviewer() {
   return (
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
+        <SEO title={tool.seoTitle} description={tool.seoDescription} />
         <div className="workspace-info">
           <Link to="/" className="workspace-back">← Back</Link>
           <span className="workspace-title">Markdown Previewer</span>
