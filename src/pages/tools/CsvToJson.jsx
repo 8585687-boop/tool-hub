@@ -2,6 +2,9 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { csvToJson } from '../../tools/convert/csvToJson'
@@ -43,6 +46,7 @@ export default function CsvToJson() {
   }
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
         <SEO title={tool.seoTitle} description={tool.seoDescription} />
@@ -132,5 +136,13 @@ export default function CsvToJson() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="csv-to-json" />
+          <ToolGuide toolId="csv-to-json" />
+          <RelatedTools toolId="csv-to-json" />
+        </>
+      )}
+    </>
   )
 }

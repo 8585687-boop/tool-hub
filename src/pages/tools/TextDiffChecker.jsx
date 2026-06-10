@@ -2,6 +2,9 @@ import { useState, useMemo, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import { computeDiff } from '../../tools/text/diffUtils'
 
@@ -109,6 +112,7 @@ export default function TextDiffChecker() {
   }, [])
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <SEO title={tool.seoTitle} description={tool.seoDescription} />
       <div className="workspace-header">
@@ -178,5 +182,13 @@ export default function TextDiffChecker() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="text-diff-checker" />
+          <ToolGuide toolId="text-diff-checker" />
+          <RelatedTools toolId="text-diff-checker" />
+        </>
+      )}
+    </>
   )
 }

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import { convertTimestamp } from '../../tools/converter/timestampConverter'
 import { copyText } from '../../tools/utils/copyText'
@@ -67,6 +70,7 @@ export default function TimestampConverter() {
   const statusText = status === 'valid' ? 'Valid' : status === 'invalid' ? 'Invalid' : 'Ready'
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <SEO title={tool.seoTitle} description={tool.seoDescription} />
       <div className="workspace-header">
@@ -177,5 +181,13 @@ export default function TimestampConverter() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="timestamp-converter" />
+          <ToolGuide toolId="timestamp-converter" />
+          <RelatedTools toolId="timestamp-converter" />
+        </>
+      )}
+    </>
   )
 }

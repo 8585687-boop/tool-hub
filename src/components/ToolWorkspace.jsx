@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import Toolbar from './Toolbar'
 import LineOutput from './LineOutput'
 import SEO from './SEO'
+import Breadcrumb from './Breadcrumb'
+import ToolGuide from './ToolGuide'
+import RelatedTools from './RelatedTools'
 
-export default function ToolWorkspace({ title, description, status, input, output, onInputChange, onClear, outputError, errorDetail, errorTitle, placeholder, seoTitle, seoDescription }) {
+export default function ToolWorkspace({ title, description, status, input, output, onInputChange, onClear, outputError, errorDetail, errorTitle, placeholder, seoTitle, seoDescription, toolId }) {
   const [fullscreen, setFullscreen] = useState(false)
 
   const handleFullscreen = () => {
@@ -15,6 +18,7 @@ export default function ToolWorkspace({ title, description, status, input, outpu
   const statusText = status === 'valid' ? 'Valid' : status === 'invalid' ? 'Invalid' : 'Ready'
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
         {seoTitle && <SEO title={seoTitle} description={seoDescription} />}
@@ -128,5 +132,13 @@ export default function ToolWorkspace({ title, description, status, input, outpu
         </div>
       </div>
     </div>
+      {!fullscreen && toolId && (
+        <>
+          <Breadcrumb toolId={toolId} />
+          <ToolGuide toolId={toolId} />
+          <RelatedTools toolId={toolId} />
+        </>
+      )}
+    </>
   )
 }

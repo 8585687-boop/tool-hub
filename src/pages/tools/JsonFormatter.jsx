@@ -40,6 +40,7 @@ export default function JsonFormatter() {
 
   return (
     <ToolWorkspace
+      toolId="json-formatter"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="JSON Formatter"

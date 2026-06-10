@@ -39,6 +39,7 @@ export default function UrlDecoder() {
 
   return (
     <ToolWorkspace
+      toolId="url-decoder"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="URL Decoder"

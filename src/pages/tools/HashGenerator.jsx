@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import LineOutput from '../../components/LineOutput'
 import { generateHash } from '../../tools/security/hashGenerator'
@@ -48,6 +51,7 @@ export default function HashGenerator() {
   const statusText = status === 'valid' ? algorithm : status === 'invalid' ? 'Error' : 'Ready'
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
         <SEO title={tool.seoTitle} description={tool.seoDescription} />
@@ -114,5 +118,13 @@ export default function HashGenerator() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="hash-generator" />
+          <ToolGuide toolId="hash-generator" />
+          <RelatedTools toolId="hash-generator" />
+        </>
+      )}
+    </>
   )
 }

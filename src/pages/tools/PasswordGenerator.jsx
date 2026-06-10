@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import { generatePassword, getPasswordStrength } from '../../tools/security/passwordGenerator'
 
@@ -44,6 +47,7 @@ export default function PasswordGenerator() {
   }
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <SEO title={tool.seoTitle} description={tool.seoDescription} />
       <div className="workspace-header">
@@ -120,5 +124,13 @@ export default function PasswordGenerator() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="password-generator" />
+          <ToolGuide toolId="password-generator" />
+          <RelatedTools toolId="password-generator" />
+        </>
+      )}
+    </>
   )
 }

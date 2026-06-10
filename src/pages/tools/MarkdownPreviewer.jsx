@@ -2,6 +2,9 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import { renderMarkdown, extractHeadings } from '../../tools/markdown/markdownPreviewer'
 import { copyText } from '../../tools/utils/copyText'
@@ -62,6 +65,7 @@ export default function MarkdownPreviewer() {
   }
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
         <SEO title={tool.seoTitle} description={tool.seoDescription} />
@@ -132,5 +136,13 @@ export default function MarkdownPreviewer() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="markdown-previewer" />
+          <ToolGuide toolId="markdown-previewer" />
+          <RelatedTools toolId="markdown-previewer" />
+        </>
+      )}
+    </>
   )
 }

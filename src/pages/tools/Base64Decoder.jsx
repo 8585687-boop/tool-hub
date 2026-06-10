@@ -39,6 +39,7 @@ export default function Base64Decoder() {
 
   return (
     <ToolWorkspace
+      toolId="base64-decoder"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="Base64 Decoder"

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
 import SEO from '../../components/SEO'
+import Breadcrumb from '../../components/Breadcrumb'
+import ToolGuide from '../../components/ToolGuide'
+import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
 import { convertColor } from '../../tools/converter/colorConverter'
 import { copyText } from '../../tools/utils/copyText'
@@ -45,6 +48,7 @@ export default function ColorConverter() {
   const colorPreview = result && !result.error ? result.hex : '#888'
 
   return (
+    <>
     <div className="workspace" style={fullscreen ? { position: 'fixed', inset: 0, zIndex: 999, height: '100vh' } : {}}>
       <div className="workspace-header">
         <SEO title={tool.seoTitle} description={tool.seoDescription} />
@@ -67,6 +71,7 @@ export default function ColorConverter() {
           <div className="panel-body">
             <div className="color-controls">
               <div className="color-preview-row">
+                <span className="color-picker-label">颜色选择器：</span>
                 <div className="color-swatch" style={{ backgroundColor: colorPreview }} />
                 <input
                   type="color"
@@ -134,5 +139,13 @@ export default function ColorConverter() {
         </div>
       </div>
     </div>
+      {!fullscreen && (
+        <>
+          <Breadcrumb toolId="color-converter" />
+          <ToolGuide toolId="color-converter" />
+          <RelatedTools toolId="color-converter" />
+        </>
+      )}
+    </>
   )
 }

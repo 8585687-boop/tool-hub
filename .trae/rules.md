@@ -365,6 +365,7 @@ src/pages/
 加入：
 
 data/tools.js
+将新的页面加入到src\data\tools.js里面
 
 
 4.
