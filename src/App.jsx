@@ -27,6 +27,8 @@ import ColorConverter from './pages/tools/ColorConverter'
 import CsvToJson from './pages/tools/CsvToJson'
 import NumberBaseConverter from './pages/tools/NumberBaseConverter'
 import Crc32Calculator from './pages/tools/Crc32Calculator'
+import About from './pages/About'
+import Privacy from './pages/Privacy'
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
           <Route path="tools/csv-to-json" element={<CsvToJson />} />
           <Route path="tools/number-base-converter" element={<NumberBaseConverter />} />
           <Route path="tools/crc32-calculator" element={<Crc32Calculator />} />
+          <Route path="about" element={<About />} />
+          <Route path="privacy" element={<Privacy />} />
         </Route>
       </Routes>
     </BrowserRouter>

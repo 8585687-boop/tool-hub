@@ -1,39 +1,28 @@
-import { Link, Outlet, useLocation } from 'react-router-dom'
-
-const categories = [
-  { label: 'Developer Tools', path: '/' },
-]
+import { Link, Outlet } from 'react-router-dom'
+import Sidebar from './Sidebar'
 
 export default function Layout() {
-  const location = useLocation()
-  const isToolPage = location.pathname !== '/'
-
   return (
     <div className="layout">
       <header className="header">
         <div className="header-left">
           <Link to="/" className="logo">ToolHub</Link>
-          <nav className="header-nav">
-            {categories.map(cat => (
-              <Link
-                key={cat.path}
-                to={cat.path}
-                className={location.pathname === cat.path ? 'active' : ''}
-              >
-                {cat.label}
-              </Link>
-            ))}
-          </nav>
         </div>
       </header>
-      <main className="main">
-        <Outlet />
-      </main>
-      {!isToolPage && (
-        <footer className="footer">
-          ToolHub — Free Online Developer Tools
-        </footer>
-      )}
+      <div className="layout-body">
+        <Sidebar />
+        <main className="main">
+          <Outlet />
+        </main>
+      </div>
+      <footer className="footer">
+        <span>ToolHub — Free Online Developer Tools</span>
+        <div className="footer-links">
+          <Link to="/about">About</Link>
+          <span className="footer-sep">|</span>
+          <Link to="/privacy">Privacy Policy</Link>
+        </div>
+      </footer>
     </div>
   )
 }

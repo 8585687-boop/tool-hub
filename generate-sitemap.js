@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { tools } from './src/data/tools.js';
+import { tools, pages } from './src/data/tools.js';
 
 // 你的网站域名（必须正确）
 const BASE_URL = 'https://tool-hub-bxb.pages.dev';
@@ -26,6 +26,18 @@ tools.forEach(tool => {
 <lastmod>${new Date().toISOString()}</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
+</url>`;
+});
+
+// 自动生成静态页面
+pages.forEach(page => {
+  const url = `${BASE_URL}${page.path}`;
+  sitemap += `
+<url>
+<loc>${url}</loc>
+<lastmod>${new Date().toISOString()}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
 </url>`;
 });
 
