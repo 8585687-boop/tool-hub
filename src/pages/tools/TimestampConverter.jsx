@@ -81,7 +81,6 @@ export default function TimestampConverter() {
           <span className={`workspace-status ${statusClass}`}>{statusText}</span>
         </div>
         <Toolbar
-          copyText={result && !result.error ? 'copied' : ''}
           onClear={handleClear}
           onFullscreen={() => setFullscreen(!fullscreen)}
           isFullscreen={fullscreen}

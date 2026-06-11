@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
 import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
-import LineOutput from '../../components/LineOutput'
 import { generateHash } from '../../tools/security/hashGenerator'
 
 const ALGORITHMS = ['SHA-256', 'SHA-384', 'SHA-512']
@@ -75,12 +75,11 @@ export default function HashGenerator() {
             <span className="panel-label">Input</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="plaintext"
+              onChange={setInput}
               placeholder="Enter text to hash, e.g. hello world"
-              spellCheck={false}
             />
           </div>
         </div>
@@ -112,7 +111,7 @@ export default function HashGenerator() {
                 </div>
               </div>
             ) : (
-              <LineOutput text={output} />
+              <CodeEditor value={output} language="plaintext" readOnly placeholder="Hash result will appear here..." />
             )}
           </div>
         </div>

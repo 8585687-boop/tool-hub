@@ -555,6 +555,11 @@ body { background: var(--bg); }
   flex: 1;
   min-height: 0;
   overflow: auto;
+  position: relative;
+}
+
+.panel-body > .code-editor-wrapper {
+  min-height: 200px;
 }
 
 /* ========== Editor ========== */
@@ -575,6 +580,68 @@ body { background: var(--bg); }
 
 .editor-input::placeholder {
   color: var(--editor-placeholder);
+}
+
+/* ========== Code Editor (Monaco) ========== */
+.code-editor-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fafafa;
+}
+
+.code-editor-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.12);
+}
+
+.code-editor-wrapper .monaco-editor,
+.code-editor-wrapper .monaco-editor .overflow-guard {
+  border-radius: var(--radius) !important;
+}
+
+.code-editor-wrapper .monaco-editor .margin {
+  background: #fafafa;
+}
+
+.code-editor-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 12px 12px 52px;
+  pointer-events: none;
+  z-index: 1;
+  color: #999;
+  font-size: 14px;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-editor-placeholder span {
+  padding-top: 0;
+}
+
+.code-editor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 200px;
+  color: var(--text);
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fafafa;
 }
 
 .editor-output {
@@ -684,6 +751,27 @@ body { background: var(--bg); }
   font-size: 12px;
   font-weight: 500;
   gap: 4px;
+}
+
+.toolbar-btn-sync {
+  width: auto;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.toolbar-btn-sync:hover {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.toolbar-btn-sync.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
 }
 
 /* ========== Validator special ========== */
@@ -1377,6 +1465,12 @@ body { background: var(--bg); }
   flex-shrink: 0;
 }
 
+.jwt-section .code-editor-wrapper {
+  min-height: unset;
+  height: auto;
+  overflow: hidden;
+}
+
 .jwt-section .line-output {
   height: auto;
   max-height: 200px;
@@ -1394,7 +1488,7 @@ body { background: var(--bg); }
 .jwt-signature {
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--editor-placeholder);
+  color: var(--text);
   background: var(--editor-bg);
   padding: 8px 12px;
   border-radius: var(--radius-sm);

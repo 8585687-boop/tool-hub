@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
@@ -85,12 +86,11 @@ export default function Crc32Calculator() {
                 </div>
               </div>
             </div>
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="plaintext"
+              onChange={setInput}
               placeholder="Enter text to compute CRC32..."
-              spellCheck={false}
             />
           </div>
         </div>

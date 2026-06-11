@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
@@ -48,7 +49,6 @@ export default function JsonValidator() {
           <span className={`workspace-status ${statusClass}`}>{statusText}</span>
         </div>
         <Toolbar
-          copyText={result?.success ? 'Valid JSON' : ''}
           onClear={handleClear}
           onFullscreen={() => setFullscreen(!fullscreen)}
           isFullscreen={fullscreen}
@@ -61,12 +61,11 @@ export default function JsonValidator() {
             <span className="panel-label">Input</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="json"
+              onChange={setInput}
               placeholder='Paste your JSON to validate, e.g. {"key": "value"}'
-              spellCheck={false}
             />
           </div>
         </div>

@@ -1,12 +1,12 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
 import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
-import LineOutput from '../../components/LineOutput'
 import { csvToJson } from '../../tools/convert/csvToJson'
 import { downloadFile } from '../../tools/utils/downloadFile'
 
@@ -96,12 +96,11 @@ export default function CsvToJson() {
                 >{hasHeader ? 'Yes' : 'No'}</button>
               </div>
             </div>
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="plaintext"
+              onChange={setInput}
               placeholder="Paste CSV data here..."
-              spellCheck={false}
             />
           </div>
         </div>
@@ -112,7 +111,7 @@ export default function CsvToJson() {
           </div>
           <div className="panel-body">
             {!result ? (
-              <div className="ts-empty">Enter CSV data to convert</div>
+              <CodeEditor value="" language="json" readOnly placeholder="Enter CSV data to convert" />
             ) : !result.success ? (
               <div className="error-detail">
                 <div className="error-detail-header">
@@ -129,7 +128,7 @@ export default function CsvToJson() {
                     <span>{result.warning}</span>
                   </div>
                 )}
-                <LineOutput text={result.result} />
+                <CodeEditor value={result.result} language="json" readOnly />
               </>
             )}
           </div>

@@ -12,13 +12,15 @@ export default function Toolbar({ copyText, onClear, onFullscreen, isFullscreen 
 
   return (
     <div className="toolbar">
-      <button
-        className="toolbar-btn toolbar-btn-text"
-        onClick={handleCopy}
-        title="Copy output"
-      >
-        {copied ? '✓ Copied' : 'Copy'}
-      </button>
+      {copyText !== undefined && (
+        <button
+          className="toolbar-btn toolbar-btn-text"
+          onClick={handleCopy}
+          title="Copy output"
+        >
+          {copied ? '✓ Copied' : 'Copy'}
+        </button>
+      )}
       <button
         className="toolbar-btn"
         onClick={onClear}

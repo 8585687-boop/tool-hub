@@ -40,6 +40,8 @@ export default function UrlDecoder() {
   return (
     <ToolWorkspace
       toolId="url-decoder"
+      inputLanguage="plaintext"
+      outputLanguage="plaintext"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="URL Decoder"

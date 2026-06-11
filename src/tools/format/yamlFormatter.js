@@ -40,7 +40,13 @@ export function yamlToJson(input) {
     if (obj === undefined) {
       return { success: false, error: 'Empty YAML document' }
     }
-    const result = JSON.stringify(obj, null, 2)
+    const result = JSON.stringify(obj, (key, value) => {
+      if (value instanceof Date) return value.toISOString()
+      if (value instanceof Int8Array || value instanceof Uint8Array) return Array.from(value)
+      if (typeof value === 'bigint') return value.toString()
+      if (typeof value === 'undefined') return null
+      return value
+    }, 2)
     return { success: true, result }
   } catch (e) {
     return { success: false, error: e.message }

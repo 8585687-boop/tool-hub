@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
@@ -78,6 +79,7 @@ export default function MarkdownPreviewer() {
           </span>
         </div>
         <div className="toolbar">
+          <button className="toolbar-btn toolbar-btn-text" onClick={() => copyText(input)} title="Copy Markdown">Copy</button>
           <button className="toolbar-btn toolbar-btn-text" onClick={handleCopyHtml} title="Copy HTML">Copy HTML</button>
           <Toolbar onClear={handleClear} onFullscreen={() => setFullscreen(!fullscreen)} isFullscreen={fullscreen} />
         </div>
@@ -89,12 +91,11 @@ export default function MarkdownPreviewer() {
             <span className="panel-label">Markdown</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="markdown"
+              onChange={setInput}
               placeholder="Type Markdown here..."
-              spellCheck={false}
             />
           </div>
         </div>
@@ -129,6 +130,7 @@ export default function MarkdownPreviewer() {
             ) : (
               <div
                 className="md-preview"
+                translate="no"
                 dangerouslySetInnerHTML={{ __html: result.html }}
               />
             )}

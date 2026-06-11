@@ -45,6 +45,8 @@ export default function JsonBeautifier() {
   return (
     <ToolWorkspace
       toolId="json-beautifier"
+      inputLanguage="json"
+      outputLanguage="json"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="JSON Beautifier"

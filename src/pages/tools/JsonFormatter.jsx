@@ -45,6 +45,8 @@ export default function JsonFormatter() {
       seoDescription={tool.seoDescription}
       title="JSON Formatter"
       description="Format and minify JSON"
+      inputLanguage="json"
+      outputLanguage="json"
       status={status}
       input={input}
       output={output}

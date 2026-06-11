@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
@@ -113,12 +114,12 @@ export default function RegexTester() {
                 </button>
               ))}
             </div>
-            <textarea
-              className="editor-input regex-text-input"
+            <CodeEditor
               value={text}
-              onChange={e => setText(e.target.value)}
+              language="plaintext"
+              onChange={setText}
               placeholder="Enter test string here..."
-              spellCheck={false}
+              height="120px"
             />
             <div className="regex-replace-row">
               <span className="regex-replace-label">Replace</span>

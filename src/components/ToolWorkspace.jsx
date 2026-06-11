@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from './Toolbar'
-import LineOutput from './LineOutput'
+import CodeEditor from './CodeEditor'
 import SEO from './SEO'
 import Breadcrumb from './Breadcrumb'
 import ToolGuide from './ToolGuide'
 import RelatedTools from './RelatedTools'
 
-export default function ToolWorkspace({ title, description, status, input, output, onInputChange, onClear, outputError, errorDetail, errorTitle, placeholder, seoTitle, seoDescription, toolId }) {
+export default function ToolWorkspace({ title, description, status, input, output, onInputChange, onClear, outputError, errorDetail, errorTitle, placeholder, seoTitle, seoDescription, toolId, inputLanguage = 'plaintext', outputLanguage = 'plaintext' }) {
   const [fullscreen, setFullscreen] = useState(false)
 
   const handleFullscreen = () => {
@@ -42,12 +42,11 @@ export default function ToolWorkspace({ title, description, status, input, outpu
             <span className="panel-label">Input</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => onInputChange(e.target.value)}
+              language={inputLanguage}
+              onChange={onInputChange}
               placeholder={placeholder || 'Paste your JSON here...'}
-              spellCheck={false}
             />
           </div>
         </div>
@@ -123,10 +122,13 @@ export default function ToolWorkspace({ title, description, status, input, outpu
                   </div>
                 )}
               </div>
-            ) : output ? (
-              <LineOutput text={output} />
             ) : (
-              <LineOutput text="" />
+              <CodeEditor
+                value={output || ''}
+                language={outputLanguage}
+                readOnly
+                placeholder="Result will appear here..."
+              />
             )}
           </div>
         </div>

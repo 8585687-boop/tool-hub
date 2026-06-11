@@ -40,6 +40,8 @@ export default function UrlEncoder() {
   return (
     <ToolWorkspace
       toolId="url-encoder"
+      inputLanguage="plaintext"
+      outputLanguage="plaintext"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="URL Encoder"

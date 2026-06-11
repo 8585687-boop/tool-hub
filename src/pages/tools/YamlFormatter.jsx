@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
 import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
-import LineOutput from '../../components/LineOutput'
 import { formatYAML, yamlToJson } from '../../tools/format/yamlFormatter'
 
 const tool = tools.find(t => t.id === 'yaml-formatter')
@@ -88,12 +88,11 @@ export default function YamlFormatter() {
             <span className="panel-label">Input</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="yaml"
+              onChange={setInput}
               placeholder="Paste your YAML here, e.g.&#10;name: John&#10;age: 30&#10;skills:&#10;  - React&#10;  - Node.js"
-              spellCheck={false}
             />
           </div>
         </div>
@@ -115,7 +114,12 @@ export default function YamlFormatter() {
                 </div>
               </div>
             ) : (
-              <LineOutput text={output} />
+              <CodeEditor
+                value={output}
+                language={viewMode === 'json' ? 'json' : 'yaml'}
+                readOnly
+                placeholder="Formatted result will appear here..."
+              />
             )}
           </div>
         </div>

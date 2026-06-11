@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
 import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
-import LineOutput from '../../components/LineOutput'
 import { generateLorem } from '../../tools/text/loremGenerator'
 
 const COUNTS = [1, 3, 5, 10]
@@ -73,7 +73,7 @@ export default function LoremGenerator() {
             <span className="panel-label">Output</span>
           </div>
           <div className="panel-body">
-            <LineOutput text={output} />
+            <CodeEditor value={output} language="plaintext" readOnly placeholder="Generated text will appear here..." />
           </div>
         </div>
       </div>

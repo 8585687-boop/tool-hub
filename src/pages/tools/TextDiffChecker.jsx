@@ -35,7 +35,7 @@ function DiffEditor({ value, onChange, diffLines, type, placeholder, gutterRef, 
   }, [syncScrollEnabled, overlayRef, gutterRef, peerTextareaRef, onScroll])
 
   return (
-    <div className="diff-editor">
+    <div className="diff-editor" translate="no">
       <div className="diff-editor-gutter" ref={gutterRef}>
         {Array.from({ length: lineCount }, (_, i) => (
           <div key={i} className="diff-gutter-line">{i + 1}</div>
@@ -132,11 +132,11 @@ export default function TextDiffChecker() {
             </span>
           )}
           <button
-            className={`toolbar-btn ${syncScrollEnabled ? 'active' : ''}`}
+            className={`toolbar-btn toolbar-btn-sync ${syncScrollEnabled ? 'active' : ''}`}
             onClick={() => setSyncScrollEnabled(!syncScrollEnabled)}
             title={syncScrollEnabled ? 'Unlock sync scroll' : 'Lock sync scroll'}
           >
-            {syncScrollEnabled ? '⎗' : '⎘'}
+            {syncScrollEnabled ? '🔗 Sync ON' : '🔗 Sync OFF'}
           </button>
           <Toolbar onClear={handleClear} onFullscreen={() => setFullscreen(!fullscreen)} isFullscreen={fullscreen} />
         </div>

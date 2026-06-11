@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
 import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
-import LineOutput from '../../components/LineOutput'
 import { formatXML, xmlToJson } from '../../tools/format/xmlFormatter'
 
 const tool = tools.find(t => t.id === 'xml-formatter')
@@ -88,12 +88,11 @@ export default function XmlFormatter() {
             <span className="panel-label">Input</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="xml"
+              onChange={setInput}
               placeholder={'Paste your XML here, e.g.\n<root>\n  <item>Hello</item>\n  <item>World</item>\n</root>'}
-              spellCheck={false}
             />
           </div>
         </div>
@@ -115,7 +114,12 @@ export default function XmlFormatter() {
                 </div>
               </div>
             ) : (
-              <LineOutput text={output} />
+              <CodeEditor
+                value={output}
+                language={viewMode === 'json' ? 'json' : 'xml'}
+                readOnly
+                placeholder="Formatted result will appear here..."
+              />
             )}
           </div>
         </div>

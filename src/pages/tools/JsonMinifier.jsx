@@ -45,6 +45,8 @@ export default function JsonMinifier() {
   return (
     <ToolWorkspace
       toolId="json-minifier"
+      inputLanguage="json"
+      outputLanguage="json"
       seoTitle={tool.seoTitle}
       seoDescription={tool.seoDescription}
       title="JSON Minifier"

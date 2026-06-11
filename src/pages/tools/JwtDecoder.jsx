@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toolbar from '../../components/Toolbar'
+import CodeEditor from '../../components/CodeEditor'
 import SEO from '../../components/SEO'
 import Breadcrumb from '../../components/Breadcrumb'
 import ToolGuide from '../../components/ToolGuide'
 import RelatedTools from '../../components/RelatedTools'
 import { tools } from '../../data/tools'
-import LineOutput from '../../components/LineOutput'
 import { decodeJWT } from '../../tools/security/jwtDecoder'
 
 const tool = tools.find(t => t.id === 'jwt-decoder')
@@ -67,12 +67,11 @@ export default function JwtDecoder() {
             <span className="panel-label">JWT Token</span>
           </div>
           <div className="panel-body">
-            <textarea
-              className="editor-input"
+            <CodeEditor
               value={input}
-              onChange={e => setInput(e.target.value)}
+              language="plaintext"
+              onChange={setInput}
               placeholder="Paste JWT token here, e.g. eyJhbGciOiJIUzI1NiIs..."
-              spellCheck={false}
             />
           </div>
         </div>
@@ -83,20 +82,20 @@ export default function JwtDecoder() {
           </div>
           <div className="panel-body">
             {!result ? (
-              <LineOutput text="" />
+              <CodeEditor value="" language="json" readOnly placeholder="Decoded result will appear here..." />
             ) : result.success ? (
               <div className="jwt-output">
                 <div className="jwt-section">
                   <div className="jwt-section-title">Header</div>
-                  <LineOutput text={JSON.stringify(result.header, null, 2)} />
+                  <CodeEditor value={JSON.stringify(result.header, null, 2)} language="json" readOnly height="120px" />
                 </div>
                 <div className="jwt-section">
                   <div className="jwt-section-title">Payload</div>
-                  <LineOutput text={JSON.stringify(result.payload, null, 2)} />
+                  <CodeEditor value={JSON.stringify(result.payload, null, 2)} language="json" readOnly height="200px" />
                 </div>
                 <div className="jwt-section">
                   <div className="jwt-section-title">Signature</div>
-                  <div className="jwt-signature">{result.signature}</div>
+                  <div className="jwt-signature">{result.signature || '(empty)'}</div>
                 </div>
               </div>
             ) : (
@@ -109,6 +108,12 @@ export default function JwtDecoder() {
                   <div className="error-detail-section-title">Error</div>
                   <div className="error-detail-text">{result.error}</div>
                 </div>
+                {result.detail && (
+                  <div className="error-detail-section">
+                    <div className="error-detail-section-title">Decoded raw payload</div>
+                    <div className="error-detail-text">{result.detail}</div>
+                  </div>
+                )}
               </div>
             )}
           </div>
