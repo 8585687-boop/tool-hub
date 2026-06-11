@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://tool-hub-bxb.pages.dev/sitemap.xml
+Sitemap: https://devforgekit.com/sitemap.xml

@@ -2,7 +2,7 @@ import fs from 'fs';
 import { tools, pages } from './src/data/tools.js';
 
 // 你的网站域名（必须正确）
-const BASE_URL = 'https://tool-hub-bxb.pages.dev';
+const BASE_URL = 'https://devforgekit.com';
 
 // 生成 XML
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
