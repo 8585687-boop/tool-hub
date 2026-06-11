@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <SEO title="ToolHub - Free Online Developer Tools" description="Free online developer tools. Fast, private, browser-based utilities for JSON, Base64, JWT, regex, and more." />
+      <SEO title="ToolHub - 50+ Free Online Developer Tools & Utilities" description="ToolHub provides 50+ free online developer tools including JSON formatter, JSON validator, Base64 encoder, Base64 decoder, JWT decoder, URL tools, text tools, data converters and more. Fast, secure and browser-based." />
 
       <div className="home-hero">
         <h1>Free Developer Tools</h1>
