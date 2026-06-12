@@ -512,6 +512,110 @@ export const tools = [
       { question: "Is my data uploaded to a server?", answer: "No, all processing happens in your browser. Your data never leaves your device." },
       { question: "How many rows can it handle?", answer: "It can handle tens of thousands of rows, but performance depends on your device." }
     ]
+  },
+  {
+    id: "api-tester",
+    name: "API Tester",
+    description: "Test REST APIs with GET, POST, PUT, DELETE",
+    category: "Developer Tools",
+    path: "/tools/api-tester",
+    icon: "⚡",
+    popular: true,
+    seoTitle: "API Tester - Free Online REST API Client | DevForgeKit",
+    seoDescription: "Test REST APIs online with GET, POST, PUT, DELETE requests. View responses, headers, status codes and API performance directly in your browser.",
+    intro: "API Tester is a lightweight REST API client that lets you test APIs directly in your browser. Send GET, POST, PUT, PATCH, DELETE requests and view formatted JSON responses with headers and timing.",
+    steps: ["Enter the request URL and select HTTP method", "Add headers, query parameters, or request body as needed", "Click Send and view the formatted response"],
+    features: ["Supports GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD", "JSON body editor with validation", "Request history saved locally", "Auto-formatted JSON responses with folding"],
+    example: { input: "GET https://jsonplaceholder.typicode.com/posts/1", output: '{ "userId": 1, "id": 1, "title": "sunt aut facere...", "body": "quia et suscipit..." }' },
+    faq: [
+      { question: "Is my API data sent to any server?", answer: "No, requests are sent directly from your browser. No proxy or middleware is involved." },
+      { question: "Does it support CORS-restricted APIs?", answer: "CORS restrictions are enforced by the browser. If the API doesn't allow cross-origin requests, the request will fail." },
+      { question: "How long is request history kept?", answer: "History is stored in your browser's localStorage and persists until you clear it." }
+    ]
+  },
+  {
+    id: "sql-formatter",
+    name: "SQL Formatter & Query Builder",
+    description: "Format SQL queries and build complex SQL statements visually",
+    category: "Format Tools",
+    path: "/tools/sql-formatter",
+    icon: "SQL",
+    popular: true,
+    seoTitle: "SQL Query Builder - Generate SQL Online | DevForgeKit",
+    seoDescription: "Build complex SQL queries online with visual query builder. Create SELECT, JOIN, WHERE, GROUP BY and advanced SQL statements.",
+    intro: "SQL Formatter & Query Builder helps developers format SQL queries and visually build complex SQL statements. Supports multi-table JOINs, WHERE conditions with AND/OR, GROUP BY, HAVING, ORDER BY, LIMIT, and aggregate functions.",
+    steps: ["Choose Format SQL, Query Builder, or Simple Generator mode", "Query Builder: configure tables, columns, JOINs, WHERE, GROUP BY, HAVING, ORDER BY", "Click Build SQL Query to generate formatted SQL"],
+    features: ["SQL Formatter with beautify and minify modes", "Visual Query Builder with multi-table JOINs", "WHERE Builder with =, !=, >, <, LIKE, IN, BETWEEN, IS NULL", "Aggregate functions: COUNT, SUM, AVG, MAX, MIN", "GROUP BY, HAVING, ORDER BY, LIMIT/OFFSET", "Simple Generator for INSERT, UPDATE, DELETE, CREATE TABLE", "Supports MySQL, PostgreSQL, SQLite, SQL Server", "Generation history saved locally"],
+    example: { input: "select u.name,count(o.id) from users u left join orders o on u.id=o.user_id group by u.name having count(o.id)>5", output: "SELECT\n  u.name,\n  COUNT(o.id)\nFROM users u\nLEFT JOIN orders o\n  ON u.id = o.user_id\nGROUP BY u.name\nHAVING COUNT(o.id) > 5;" },
+    faq: [
+      { question: "What SQL dialects are supported?", answer: "The formatter supports standard SQL syntax. The generator supports MySQL, PostgreSQL, SQLite, and SQL Server specific data types and syntax." },
+      { question: "Is my SQL data sent to a server?", answer: "No, all formatting and generation happens locally in your browser. Your SQL queries never leave your device." },
+      { question: "Can I build complex queries with JOINs?", answer: "Yes! Use the Query Builder to add multiple tables, configure JOINs (INNER, LEFT, RIGHT, FULL), set ON conditions, and add WHERE, GROUP BY, HAVING, and ORDER BY clauses." },
+      { question: "Can I customize the output format?", answer: "Yes, you can choose keyword casing (upper/lower/original), beautify or minify mode, and whether to add semicolons." }
+    ]
+  },
+  {
+    id: "json-schema-validator",
+    name: "JSON Schema Validator",
+    description: "Validate JSON data against JSON Schema",
+    category: "JSON Tools",
+    path: "/tools/json-schema-validator",
+    icon: "✓",
+    popular: true,
+    seoTitle: "JSON Schema Validator - Validate JSON Data Online | DevForgeKit",
+    seoDescription: "Validate JSON data against JSON Schema online. Check types, required fields and validation rules instantly.",
+    intro: "JSON Schema Validator helps developers validate JSON data against a JSON Schema. Supports type checking, required fields, enum, pattern, min/max length, min/max value, array items, and nested object validation.",
+    steps: ["Paste your JSON Schema in the left panel", "Paste your JSON Data in the right panel", "Click Validate to check if the data matches the schema"],
+    features: ["Validate against JSON Schema rules", "Supports type, required, properties, items, enum, pattern", "Supports minimum, maximum, minLength, maxLength", "Detailed error messages with path and reason", "Built-in templates: User, Product, API Response", "Upload JSON files, Format, Copy", "Validation history saved locally"],
+    example: { input: '{"type":"object","required":["name"]}', output: '{"name":"Tom"} → Valid' },
+    faq: [
+      { question: "What JSON Schema features are supported?", answer: "Type checking, required fields, properties, items (arrays), enum, pattern (regex), minimum/maximum, minLength/maxLength, additionalProperties, minItems/maxItems." },
+      { question: "Is my data sent to a server?", answer: "No, all validation happens locally in your browser. Your JSON data and schemas never leave your device." },
+      { question: "Can I use draft-07 or newer JSON Schema?", answer: "This tool supports a practical subset of JSON Schema commonly used for validation. Advanced features like $ref, allOf, anyOf are not yet supported." },
+      { question: "How do I fix validation errors?", answer: "Each error shows the path (e.g. $.age), the expected rule, and what was received. Use this to locate and fix the issue in your JSON data." }
+    ]
+  },
+  {
+    id: "cron-generator",
+    name: "Cron Generator",
+    description: "Build & validate cron expressions",
+    category: "Developer Tools",
+    path: "/tools/cron-generator",
+    icon: "⏱",
+    popular: true,
+    seoTitle: "Cron Generator - Free Online Cron Expression Builder | DevForgeKit",
+    seoDescription: "Generate and validate cron expressions online. Create cron schedules for Linux, servers and automation tasks.",
+    intro: "Cron Generator helps developers build and validate cron expressions visually. Use the Builder to configure schedules with form controls, or the Validator to check existing expressions.",
+    steps: ["Use the Builder to set minute, hour, day, month, and weekday", "Copy the generated cron expression", "Or switch to Validator to check an existing expression"],
+    features: ["Visual cron builder with Every, Specific, Range, Step modes", "Real-time human-readable description", "Cron validator with detailed error messages", "Built-in templates: every minute, hourly, daily, weekly, monthly", "Copy and download cron expressions", "Format reference guide", "History saved locally"],
+    example: { input: "*/5 * * * *", output: "Runs every 5 minutes" },
+    faq: [
+      { question: "What cron format is supported?", answer: "Standard 5-field cron: minute hour day-of-month month weekday. This is the format used by Linux crontab and most scheduling systems." },
+      { question: "Does it support 6-field or 7-field cron?", answer: "Currently only 5-field cron is supported. 6-field (with seconds) and 7-field (with year) formats are not yet supported." },
+      { question: "Is my data sent to a server?", answer: "No, all processing happens locally in your browser." },
+      { question: "What does */5 mean?", answer: "*/5 means 'every 5 units'. So */5 in the minute field means every 5 minutes, and */5 in the hour field means every 5 hours." }
+    ]
+  },
+  {
+    id: "json-diff",
+    name: "JSON Diff",
+    description: "Compare two JSON objects",
+    category: "JSON Tools",
+    path: "/tools/json-diff",
+    icon: "⟷",
+    popular: true,
+    seoTitle: "JSON Diff - Compare JSON Files Online | DevForgeKit",
+    seoDescription: "Compare two JSON objects online and find differences instantly.",
+    intro: "JSON Diff helps developers compare two JSON objects and instantly find what was added, removed, or changed. Supports nested objects, arrays, and configurable comparison options.",
+    steps: ["Paste original JSON in the left editor", "Paste new JSON in the right editor", "Click Compare to see differences"],
+    features: ["Detect Added, Removed, and Changed fields", "Show JSON path for each difference (e.g. $.user.name)", "Show before and after values", "Diff statistics: count of added, removed, changed", "Options: Ignore key order, Ignore array order", "Upload JSON files, Format, Copy result", "Comparison history saved locally"],
+    example: { input: '{"name":"Tom","age":20}', output: '{"name":"Tom","age":25} → Changed: $.age 20→25' },
+    faq: [
+      { question: "What types of differences are detected?", answer: "Three types: Added (new key in new JSON), Removed (key missing in new JSON), Changed (key exists in both but values differ)." },
+      { question: "Does it support nested objects?", answer: "Yes, it recursively compares nested objects and arrays, showing the full path like $.user.profile.age." },
+      { question: "What does 'Ignore key order' do?", answer: "When enabled, objects with the same keys in different order are considered identical. {a:1,b:2} and {b:2,a:1} will show no difference." },
+      { question: "Is my data sent to a server?", answer: "No, all comparison happens locally in your browser. Your JSON data never leaves your device." }
+    ]
   }
 ]
 

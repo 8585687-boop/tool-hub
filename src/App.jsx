@@ -28,6 +28,11 @@ import CsvToJson from './pages/tools/CsvToJson'
 import NumberBaseConverter from './pages/tools/NumberBaseConverter'
 import Crc32Calculator from './pages/tools/Crc32Calculator'
 import ExcelAnalyzer from './pages/tools/ExcelAnalyzer'
+import ApiTester from './pages/tools/ApiTester'
+import SqlFormatter from './pages/tools/SqlFormatter'
+import JsonSchemaValidator from './pages/tools/JsonSchemaValidator'
+import CronGenerator from './pages/tools/CronGenerator'
+import JsonDiff from './pages/tools/JsonDiff'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
 
@@ -64,6 +69,11 @@ function App() {
           <Route path="tools/number-base-converter" element={<NumberBaseConverter />} />
           <Route path="tools/crc32-calculator" element={<Crc32Calculator />} />
           <Route path="tools/excel-analyzer" element={<ExcelAnalyzer />} />
+          <Route path="tools/api-tester" element={<ApiTester />} />
+          <Route path="tools/sql-formatter" element={<SqlFormatter />} />
+          <Route path="tools/json-schema-validator" element={<JsonSchemaValidator />} />
+          <Route path="tools/cron-generator" element={<CronGenerator />} />
+          <Route path="tools/json-diff" element={<JsonDiff />} />
           <Route path="about" element={<About />} />
           <Route path="privacy" element={<Privacy />} />
         </Route>
