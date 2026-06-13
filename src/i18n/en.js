@@ -109,6 +109,8 @@ const en = {
     cronGenerator: "Cron Generator",
     jsonDiff: "JSON Diff",
     imageCompressor: "Image Compressor",
+    qrGenerator: "QR Code Generator",
+    jsonTypeGenerator: "JSON Type Generator",
   },
 
   // Tool descriptions
@@ -146,12 +148,61 @@ const en = {
     cronGenerator: "Generate and validate cron expressions",
     jsonDiff: "Compare JSON differences",
     imageCompressor: "Compress images locally",
+    qrGenerator: "Generate QR codes",
+    jsonTypeGenerator: "Generate types from JSON",
   },
 
   // Language
   language: "Language",
   en: "English",
   zh: "中文",
+
+  // QR Generator
+  qrType: "QR Type",
+  qrUrl: "URL",
+  qrText: "Text",
+  qrEmail: "Email",
+  qrPhone: "Phone",
+  qrWifi: "WiFi",
+  qrUrlPlaceholder: "https://example.com",
+  qrTextPlaceholder: "Enter text to encode",
+  qrEmailPlaceholder: "email@example.com",
+  qrPhonePlaceholder: "+1234567890",
+  qrWifiSsid: "Network Name (SSID)",
+  qrWifiPassword: "Password",
+  qrWifiEncryption: "Encryption",
+  qrWifiNone: "None",
+  qrWifiWpa: "WPA/WPA2",
+  qrWifiWep: "WEP",
+  qrSize: "Size",
+  qrFgColor: "Foreground Color",
+  qrBgColor: "Background Color",
+  qrLogo: "Logo",
+  qrUploadLogo: "Upload Logo",
+  qrRemoveLogo: "Remove Logo",
+  qrDownloadPng: "Download PNG",
+  qrDownloadSvg: "Download SVG",
+  qrHistory: "History",
+  qrHistoryEmpty: "No history yet",
+  qrClearHistory: "Clear History",
+  qrContent: "Content",
+  qrCustomize: "Customize",
+  qrPreview: "Preview",
+  qrGenerateFirst: "Enter content to generate QR code",
+
+  // JSON Type Generator
+  jtgLanguage: "Language",
+  jtgRootName: "Root Name",
+  jtgOptionalFields: "Optional Fields",
+  jtgExportInterface: "Export Interface",
+  jtgInputJson: "Input JSON",
+  jtgOutput: "Generated Types",
+  jtgInvalidJson: "Invalid JSON. Please check your input.",
+  jtgHistory: "History",
+  jtgHistoryEmpty: "No history yet",
+  jtgClearHistory: "Clear History",
+  jtgDownloadFile: "Download",
+  jtgNoOutput: "Click Generate to create type definitions",
 
   // Tool content (intro, steps, features, example, faq)
   toolContent: {
@@ -495,6 +546,30 @@ const en = {
         { q: "What image formats are supported?", a: "JPG/JPEG, PNG, and WEBP. You can also convert between formats." },
         { q: "How does the quality setting work?", a: "The quality slider (1-100%) controls the compression level. Lower quality means smaller file size." },
         { q: "Can I compress multiple images at once?", a: "Yes, you can upload multiple images and download all as a ZIP file." }
+      ]
+    },
+    qrGenerator: {
+      intro: "QR Code Generator lets you create customizable QR codes for URLs, text, email, phone, and WiFi. Add a logo, change colors, and download as PNG or SVG.",
+      steps: ["Select QR type and enter your content", "Customize size, colors, and add a logo", "Download as PNG or SVG"],
+      features: ["Support URL, Text, Email, Phone, WiFi types", "Custom foreground and background colors", "Logo upload for branded QR codes", "Download as PNG or SVG", "History saved locally"],
+      example: { input: "https://example.com", output: "QR code image (256x256)" },
+      faq: [
+        { q: "Is this QR code generator free?", a: "Yes, completely free with no limits." },
+        { q: "Can I add my logo to the QR code?", a: "Yes, upload a logo image and it will be placed in the center of the QR code." },
+        { q: "What formats can I download?", a: "PNG and SVG formats are supported." },
+        { q: "Is my data sent to a server?", a: "No, all QR code generation happens locally in your browser." }
+      ]
+    },
+    jsonTypeGenerator: {
+      intro: "JSON Type Generator converts JSON data into type definitions for TypeScript, JavaScript, Python, Java, Go, and C#. Paste your JSON and get clean type code instantly.",
+      steps: ["Paste your JSON data into the input area", "Select target language and configure options", "Click Generate to create type definitions"],
+      features: ["Support TypeScript, JavaScript, Python, Java, Go, C#", "Handle nested objects and arrays", "Optional fields and export interface options", "Download generated type files", "History saved locally"],
+      example: { input: '{"name":"Tom","age":20,"address":{"city":"NYC"}}', output: "interface Root {\n  name: string;\n  age: number;\n  address: Address;\n}\ninterface Address {\n  city: string;\n}" },
+      faq: [
+        { q: "What languages are supported?", a: "TypeScript, JavaScript (JSDoc), Python, Java, Go, and C#." },
+        { q: "Does it handle nested objects?", a: "Yes, it recursively generates types for nested objects and arrays." },
+        { q: "Can I customize the root type name?", a: "Yes, you can set any root name. The default is 'Root'." },
+        { q: "Is my data sent to a server?", a: "No, all type generation happens locally in your browser." }
       ]
     }
   }

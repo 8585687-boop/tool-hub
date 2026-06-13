@@ -35,6 +35,8 @@ const TOOL_KEY_MAP = {
   "cron-generator": "cronGenerator",
   "json-diff": "jsonDiff",
   "image-compressor": "imageCompressor",
+  "qr-generator": "qrGenerator",
+  "json-type-generator": "jsonTypeGenerator",
 }
 
 export default function ToolGuide({ toolId }) {
@@ -117,8 +119,8 @@ export default function ToolGuide({ toolId }) {
           <div className="guide-faq">
             {faq.map((item, i) => (
               <div key={i} className="faq-item">
-                <div className="faq-question">{item.question}</div>
-                <div className="faq-answer">{item.answer}</div>
+                <div className="faq-question">{item.question || item.q}</div>
+                <div className="faq-answer">{item.answer || item.a}</div>
               </div>
             ))}
           </div>

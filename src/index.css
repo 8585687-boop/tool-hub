@@ -5231,3 +5231,272 @@ body { background: var(--bg); }
   color: var(--accent);
   font-weight: 600;
 }
+
+/* ===== QR Generator ===== */
+.qr-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.qr-type-tabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.qr-type-tab {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.qr-type-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.qr-type-tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.qr-input,
+.qr-textarea,
+.qr-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.qr-input:focus,
+.qr-textarea:focus,
+.qr-select:focus {
+  border-color: var(--accent);
+}
+
+.qr-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-mono);
+}
+
+.qr-wifi-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qr-option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-option-row label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.qr-option-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+}
+
+.qr-option-row input[type="color"] {
+  width: 36px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: none;
+}
+
+.qr-logo-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.qr-preview-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.qr-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.qr-download-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.qr-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.qr-history-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 12px;
+}
+
+.qr-history-item:hover {
+  background: var(--bg-secondary);
+}
+
+.qr-history-type {
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.qr-history-value {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ===== JSON Type Generator ===== */
+.jtg-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jtg-option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jtg-option-row label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.jtg-select,
+.jtg-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.jtg-select:focus,
+.jtg-input:focus {
+  border-color: var(--accent);
+}
+
+.jtg-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.jtg-check input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+.jtg-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.jtg-history-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 12px;
+}
+
+.jtg-history-item:hover {
+  background: var(--bg-secondary);
+}
+
+.jtg-history-lang {
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.jtg-history-value {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}

@@ -637,6 +637,48 @@ export const tools = [
       { question: "How does the quality setting work?", answer: "The quality slider (1-100%) controls the compression level. Lower quality means smaller file size. PNG output does not use the quality setting as PNG is lossless." },
       { question: "Can I compress multiple images at once?", answer: "Yes, you can upload multiple images and compress them all. Download individual results or all at once as a ZIP file." }
     ]
+  },
+  {
+    id: "qr-generator",
+    name: "QR Code Generator",
+    description: "Generate QR codes",
+    category: "Developer Tools",
+    path: "/tools/qr-generator",
+    icon: "⬜",
+    popular: true,
+    seoTitle: "QR Code Generator - Create Free QR Codes Online",
+    seoDescription: "Create free QR codes for URLs, text, email and WiFi. Customize and download QR images.",
+    intro: "QR Code Generator lets you create customizable QR codes for URLs, text, email, phone, and WiFi. Add a logo, change colors, and download as PNG or SVG.",
+    steps: ["Select QR type and enter your content", "Customize size, colors, and add a logo", "Download as PNG or SVG"],
+    features: ["Support URL, Text, Email, Phone, WiFi types", "Custom foreground and background colors", "Logo upload for branded QR codes", "Download as PNG or SVG", "History saved locally"],
+    example: { input: "https://example.com", output: "QR code image (256x256)" },
+    faq: [
+      { question: "Is this QR code generator free?", answer: "Yes, completely free with no limits." },
+      { question: "Can I add my logo to the QR code?", answer: "Yes, upload a logo image and it will be placed in the center of the QR code." },
+      { question: "What formats can I download?", answer: "PNG and SVG formats are supported." },
+      { question: "Is my data sent to a server?", answer: "No, all QR code generation happens locally in your browser." }
+    ]
+  },
+  {
+    id: "json-type-generator",
+    name: "JSON Type Generator",
+    description: "Generate types from JSON",
+    category: "Developer Tools",
+    path: "/tools/json-type-generator",
+    icon: "TS",
+    popular: true,
+    seoTitle: "JSON Type Generator - Generate TypeScript Types from JSON Online",
+    seoDescription: "Generate TypeScript interfaces and types from JSON instantly.",
+    intro: "JSON Type Generator converts JSON data into type definitions for TypeScript, JavaScript, Python, Java, Go, and C#. Paste your JSON and get clean type code instantly.",
+    steps: ["Paste your JSON data into the input area", "Select target language and configure options", "Click Generate to create type definitions"],
+    features: ["Support TypeScript, JavaScript, Python, Java, Go, C#", "Handle nested objects and arrays", "Optional fields and export interface options", "Download generated type files", "History saved locally"],
+    example: { input: '{"name":"Tom","age":20,"address":{"city":"NYC"}}', output: "interface Root {\n  name: string;\n  age: number;\n  address: Address;\n}\ninterface Address {\n  city: string;\n}" },
+    faq: [
+      { question: "What languages are supported?", answer: "TypeScript, JavaScript (JSDoc), Python, Java, Go, and C#." },
+      { question: "Does it handle nested objects?", answer: "Yes, it recursively generates types for nested objects and arrays." },
+      { question: "Can I customize the root type name?", answer: "Yes, you can set any root name. The default is 'Root'." },
+      { question: "Is my data sent to a server?", answer: "No, all type generation happens locally in your browser." }
+    ]
   }
 ]
 

@@ -109,6 +109,8 @@ const zh = {
     cronGenerator: "Cron 表达式生成",
     jsonDiff: "JSON 差异对比",
     imageCompressor: "图片压缩",
+    qrGenerator: "二维码生成器",
+    jsonTypeGenerator: "JSON 类型生成器",
   },
 
   // 工具描述
@@ -146,12 +148,61 @@ const zh = {
     cronGenerator: "生成和验证 Cron 表达式",
     jsonDiff: "比较 JSON 差异",
     imageCompressor: "本地压缩图片",
+    qrGenerator: "生成二维码",
+    jsonTypeGenerator: "从 JSON 生成类型",
   },
 
   // 语言
   language: "语言",
   en: "English",
   zh: "中文",
+
+  // 二维码生成器
+  qrType: "二维码类型",
+  qrUrl: "网址",
+  qrText: "文本",
+  qrEmail: "邮箱",
+  qrPhone: "电话",
+  qrWifi: "WiFi",
+  qrUrlPlaceholder: "https://example.com",
+  qrTextPlaceholder: "输入要编码的文本",
+  qrEmailPlaceholder: "email@example.com",
+  qrPhonePlaceholder: "+8613800138000",
+  qrWifiSsid: "网络名称 (SSID)",
+  qrWifiPassword: "密码",
+  qrWifiEncryption: "加密方式",
+  qrWifiNone: "无",
+  qrWifiWpa: "WPA/WPA2",
+  qrWifiWep: "WEP",
+  qrSize: "大小",
+  qrFgColor: "前景色",
+  qrBgColor: "背景色",
+  qrLogo: "Logo",
+  qrUploadLogo: "上传 Logo",
+  qrRemoveLogo: "移除 Logo",
+  qrDownloadPng: "下载 PNG",
+  qrDownloadSvg: "下载 SVG",
+  qrHistory: "历史记录",
+  qrHistoryEmpty: "暂无历史记录",
+  qrClearHistory: "清除历史",
+  qrContent: "内容",
+  qrCustomize: "自定义",
+  qrPreview: "预览",
+  qrGenerateFirst: "输入内容以生成二维码",
+
+  // JSON 类型生成器
+  jtgLanguage: "语言",
+  jtgRootName: "根类型名称",
+  jtgOptionalFields: "可选字段",
+  jtgExportInterface: "导出接口",
+  jtgInputJson: "输入 JSON",
+  jtgOutput: "生成的类型",
+  jtgInvalidJson: "无效的 JSON，请检查输入。",
+  jtgHistory: "历史记录",
+  jtgHistoryEmpty: "暂无历史记录",
+  jtgClearHistory: "清除历史",
+  jtgDownloadFile: "下载",
+  jtgNoOutput: "点击生成以创建类型定义",
 
   // 工具内容（介绍、步骤、功能、示例、常见问题）
   toolContent: {
@@ -495,6 +546,30 @@ const zh = {
         { q: "支持哪些图片格式？", a: "JPG/JPEG、PNG 和 WEBP，也可以在这些格式之间转换。" },
         { q: "质量设置如何工作？", a: "质量滑块（1-100%）控制压缩级别，质量越低文件越小。" },
         { q: "可以一次压缩多张图片吗？", a: "可以，上传多张图片后可全部压缩并下载为 ZIP 文件。" }
+      ]
+    },
+    qrGenerator: {
+      intro: "二维码生成器让您为 URL、文本、电子邮件、电话和 WiFi 创建可自定义的二维码。添加 Logo、更改颜色，并下载为 PNG 或 SVG。",
+      steps: ["选择二维码类型并输入内容", "自定义大小、颜色并添加 Logo", "下载为 PNG 或 SVG"],
+      features: ["支持 URL、文本、电子邮件、电话、WiFi 类型", "自定义前景色和背景色", "上传 Logo 制作品牌二维码", "下载为 PNG 或 SVG", "历史记录保存在本地"],
+      example: { input: "https://example.com", output: "二维码图片 (256x256)" },
+      faq: [
+        { q: "这个二维码生成器免费吗？", a: "是的，完全免费，无使用限制。" },
+        { q: "可以在二维码中添加 Logo 吗？", a: "可以，上传 Logo 图片后它会显示在二维码中心。" },
+        { q: "支持哪些下载格式？", a: "支持 PNG 和 SVG 格式。" },
+        { q: "我的数据会发送到服务器吗？", a: "不会，所有二维码生成都在您的浏览器本地完成。" }
+      ]
+    },
+    jsonTypeGenerator: {
+      intro: "JSON 类型生成器将 JSON 数据转换为 TypeScript、JavaScript、Python、Java、Go 和 C# 的类型定义。粘贴 JSON 即可获取整洁的类型代码。",
+      steps: ["将 JSON 数据粘贴到输入区域", "选择目标语言并配置选项", "点击生成以创建类型定义"],
+      features: ["支持 TypeScript、JavaScript、Python、Java、Go、C#", "处理嵌套对象和数组", "可选字段和导出接口选项", "下载生成的类型文件", "历史记录保存在本地"],
+      example: { input: '{"name":"Tom","age":20,"address":{"city":"NYC"}}', output: "interface Root {\n  name: string;\n  age: number;\n  address: Address;\n}\ninterface Address {\n  city: string;\n}" },
+      faq: [
+        { q: "支持哪些语言？", a: "TypeScript、JavaScript (JSDoc)、Python、Java、Go 和 C#。" },
+        { q: "能处理嵌套对象吗？", a: "可以，递归生成嵌套对象和数组的类型。" },
+        { q: "可以自定义根类型名称吗？", a: "可以，您可以设置任意根名称，默认为 'Root'。" },
+        { q: "我的数据会发送到服务器吗？", a: "不会，所有类型生成都在您的浏览器本地完成。" }
       ]
     }
   }

@@ -34,6 +34,8 @@ import JsonSchemaValidator from './pages/tools/JsonSchemaValidator'
 import CronGenerator from './pages/tools/CronGenerator'
 import JsonDiff from './pages/tools/JsonDiff'
 import ImageCompressor from './pages/tools/ImageCompressor'
+import QRGenerator from './pages/tools/QRGenerator'
+import JsonTypeGenerator from './pages/tools/JsonTypeGenerator'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
 
@@ -76,6 +78,8 @@ function App() {
           <Route path="tools/cron-generator" element={<CronGenerator />} />
           <Route path="tools/json-diff" element={<JsonDiff />} />
           <Route path="tools/image-compressor" element={<ImageCompressor />} />
+          <Route path="tools/qr-generator" element={<QRGenerator />} />
+          <Route path="tools/json-type-generator" element={<JsonTypeGenerator />} />
           <Route path="about" element={<About />} />
           <Route path="privacy" element={<Privacy />} />
         </Route>

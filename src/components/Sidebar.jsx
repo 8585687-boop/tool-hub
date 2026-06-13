@@ -47,6 +47,8 @@ const TOOL_KEY_MAP = {
   "cron-generator": "cronGenerator",
   "json-diff": "jsonDiff",
   "image-compressor": "imageCompressor",
+  "qr-generator": "qrGenerator",
+  "json-type-generator": "jsonTypeGenerator",
 }
 
 export default function Sidebar() {
