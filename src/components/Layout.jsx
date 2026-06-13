@@ -1,12 +1,19 @@
 import { Link, Outlet } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Sidebar from './Sidebar'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Layout() {
+  const { t } = useTranslation()
+
   return (
     <div className="layout">
       <header className="header">
         <div className="header-left">
-          <Link to="/" className="logo">ToolHub</Link>
+          <Link to="/" className="logo">{t('siteName')}</Link>
+        </div>
+        <div className="header-right">
+          <LanguageSwitcher />
         </div>
       </header>
       <div className="layout-body">
@@ -16,11 +23,11 @@ export default function Layout() {
         </main>
       </div>
       <footer className="footer">
-        <span>ToolHub — Free Online Developer Tools</span>
+        <span>{t('footerText')}</span>
         <div className="footer-links">
-          <Link to="/about">About</Link>
+          <Link to="/about">{t('about')}</Link>
           <span className="footer-sep">|</span>
-          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/privacy">{t('privacyPolicy')}</Link>
         </div>
       </footer>
     </div>

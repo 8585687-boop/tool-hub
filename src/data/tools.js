@@ -616,6 +616,27 @@ export const tools = [
       { question: "What does 'Ignore key order' do?", answer: "When enabled, objects with the same keys in different order are considered identical. {a:1,b:2} and {b:2,a:1} will show no difference." },
       { question: "Is my data sent to a server?", answer: "No, all comparison happens locally in your browser. Your JSON data never leaves your device." }
     ]
+  },
+  {
+    id: "image-compressor",
+    name: "Image Compressor",
+    description: "Compress images locally",
+    category: "Converter Tools",
+    path: "/tools/image-compressor",
+    icon: "🖼",
+    popular: true,
+    seoTitle: "Image Compressor - Compress Images Online Free | DevForgeKit",
+    seoDescription: "Compress images online while maintaining quality. Reduce JPG PNG WEBP image size instantly.",
+    intro: "Image Compressor helps you reduce image file sizes directly in your browser. Upload JPG, PNG, or WEBP images, adjust quality and dimensions, and download compressed results — no data is sent to any server.",
+    steps: ["Upload or drag & drop images (JPG, PNG, WEBP)", "Adjust quality, output format, and resize options", "Click Compress Image and download the results"],
+    features: ["Browser-side compression — no server upload", "Quality slider from 1% to 100%", "Output format: Original, JPG, PNG, WEBP", "Resize by width and height", "Batch compression with ZIP download", "Preview and size comparison for each image"],
+    example: { input: "photo.jpg (2.4 MB)", output: "photo.jpg (480 KB) — Saved 80%" },
+    faq: [
+      { question: "Is my image data uploaded to a server?", answer: "No. All compression happens locally in your browser using the Canvas API. Your images never leave your device." },
+      { question: "What image formats are supported?", answer: "JPG/JPEG, PNG, and WEBP. You can also convert between these formats by selecting a different output format." },
+      { question: "How does the quality setting work?", answer: "The quality slider (1-100%) controls the compression level. Lower quality means smaller file size. PNG output does not use the quality setting as PNG is lossless." },
+      { question: "Can I compress multiple images at once?", answer: "Yes, you can upload multiple images and compress them all. Download individual results or all at once as a ZIP file." }
+    ]
   }
 ]
 

@@ -33,6 +33,7 @@ import SqlFormatter from './pages/tools/SqlFormatter'
 import JsonSchemaValidator from './pages/tools/JsonSchemaValidator'
 import CronGenerator from './pages/tools/CronGenerator'
 import JsonDiff from './pages/tools/JsonDiff'
+import ImageCompressor from './pages/tools/ImageCompressor'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
 
@@ -74,6 +75,7 @@ function App() {
           <Route path="tools/json-schema-validator" element={<JsonSchemaValidator />} />
           <Route path="tools/cron-generator" element={<CronGenerator />} />
           <Route path="tools/json-diff" element={<JsonDiff />} />
+          <Route path="tools/image-compressor" element={<ImageCompressor />} />
           <Route path="about" element={<About />} />
           <Route path="privacy" element={<Privacy />} />
         </Route>

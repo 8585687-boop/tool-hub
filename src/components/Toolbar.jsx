@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Toolbar({ copyText, onClear, onFullscreen, isFullscreen }) {
   const [copied, setCopied] = useState(false)
+  const { t } = useTranslation()
 
   const handleCopy = () => {
     if (!copyText) return
@@ -18,20 +20,20 @@ export default function Toolbar({ copyText, onClear, onFullscreen, isFullscreen 
           onClick={handleCopy}
           title="Copy output"
         >
-          {copied ? '✓ Copied' : 'Copy'}
+          {copied ? `✓ ${t('copied')}` : t('copy')}
         </button>
       )}
       <button
         className="toolbar-btn"
         onClick={onClear}
-        title="Clear"
+        title={t('clear')}
       >
         ✕
       </button>
       <button
         className={`toolbar-btn ${isFullscreen ? 'active' : ''}`}
         onClick={onFullscreen}
-        title="Fullscreen"
+        title={t('fullscreen')}
       >
         {isFullscreen ? '⤓' : '⤢'}
       </button>
