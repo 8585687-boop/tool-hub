@@ -1,0 +1,169 @@
+/* ========== Timestamp Converter ========== */
+.ts-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.ts-control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ts-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.ts-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  font-size: 14px;
+  background: var(--surface);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.ts-input:focus {
+  border-color: var(--border-focus);
+}
+
+.ts-input::placeholder {
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.ts-now-btn {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ts-now-btn:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+.ts-unit-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.ts-unit-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ts-unit-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.ts-select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-h);
+  font-size: 12px;
+  font-family: var(--mono);
+  outline: none;
+  cursor: pointer;
+}
+
+.ts-select:focus {
+  border-color: var(--border-focus);
+}
+
+.ts-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text);
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.ts-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0;
+}
+
+.ts-result-item {
+  display: flex;
+  align-items: baseline;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ts-result-item:last-child {
+  border-bottom: none;
+}
+
+.ts-result-label {
+  width: 140px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.ts-result-value {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-h);
+  word-break: break-all;
+}
+
+.ts-mono {
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.ts-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: #FEF3C7;
+  color: #92400E;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.ts-warning-icon {
+  flex-shrink: 0;
+  font-size: 14px;
+}

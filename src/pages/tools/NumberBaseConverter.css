@@ -1,0 +1,106 @@
+/* ========== Number Base Converter ========== */
+.base-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.base-control-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.base-control-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  min-width: 72px;
+}
+
+.base-select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-h);
+  font-size: 13px;
+  font-family: var(--mono);
+  cursor: pointer;
+  outline: none;
+}
+
+.base-select:focus {
+  border-color: var(--accent);
+}
+
+.base-control-hint {
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.base-swap-row {
+  justify-content: center;
+}
+
+.base-swap-btn {
+  padding: 4px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.base-swap-btn:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+.base-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: var(--editor-bg);
+  color: var(--editor-text);
+  font-family: var(--mono);
+  font-size: 15px;
+  outline: none;
+  border-radius: var(--radius-sm);
+}
+
+.base-input::placeholder {
+  color: var(--editor-placeholder);
+}
+
+.base-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 16px;
+  height: 100%;
+}
+
+.base-result-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  word-break: break-all;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.base-result-meta {
+  font-size: 12px;
+  color: var(--text);
+  opacity: 0.5;
+}

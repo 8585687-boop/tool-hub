@@ -1,0 +1,26 @@
+/* ========== Hash Generator ========== */
+.hash-algo-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.hash-algo-tab {
+  font-size: 11px;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--mono);
+  transition: all 0.15s;
+}
+
+.hash-algo-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.hash-algo-tab:hover:not(.active) {
+  background: var(--accent-bg);
+}

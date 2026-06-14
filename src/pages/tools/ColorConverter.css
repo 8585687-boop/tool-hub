@@ -1,0 +1,93 @@
+/* ========== Color Converter ========== */
+.color-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.color-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-picker-label {
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.color-swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.color-picker {
+  width: 48px;
+  height: 48px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--radius);
+}
+
+.color-picker::-webkit-color-swatch-wrapper { padding: 2px; }
+.color-picker::-webkit-color-swatch { border-radius: var(--radius-sm); border: 1px solid var(--border); }
+
+.color-format-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.color-results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.color-swatch-large {
+  width: 100%;
+  height: 80px;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+}
+
+.color-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.color-value-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 8px;
+}
+
+.color-value-row:last-child {
+  border-bottom: none;
+}
+
+.color-value-label {
+  width: 48px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.color-value-text {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-h);
+}

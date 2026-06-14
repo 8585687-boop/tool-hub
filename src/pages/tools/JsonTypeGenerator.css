@@ -1,0 +1,92 @@
+/* ========== JSON Type Generator ========== */
+.jtg-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.jtg-option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jtg-option-row label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.jtg-select,
+.jtg-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.jtg-select:focus,
+.jtg-input:focus {
+  border-color: var(--accent);
+}
+
+.jtg-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.jtg-check input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+.jtg-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.jtg-history-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 12px;
+}
+
+.jtg-history-item:hover {
+  background: var(--bg-secondary);
+}
+
+.jtg-history-lang {
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.jtg-history-value {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}

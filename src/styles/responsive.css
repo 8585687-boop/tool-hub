@@ -1,0 +1,199 @@
+/* ========== Main Responsive ========== */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+
+  .home-hero h1 { font-size: 28px; }
+
+  .workspace-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .workspace-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .workspace-panel:last-child {
+    border-bottom: none;
+  }
+
+  .workspace-desc { display: none; }
+
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ea-main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .tool-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-example {
+    flex-direction: column;
+  }
+
+  .related-tools-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .related-tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== API Tester Responsive ========== */
+@media (max-width: 768px) {
+  .api-url-bar {
+    flex-wrap: wrap;
+  }
+
+  .api-method-select {
+    width: 80px;
+  }
+
+  .api-url-input {
+    min-width: 0;
+  }
+
+  .api-history-list {
+    flex-direction: column;
+  }
+
+  .api-history-item {
+    width: 100%;
+  }
+
+  .api-history-url {
+    max-width: 120px;
+  }
+}
+
+/* ========== SQL Formatter Responsive ========== */
+@media (max-width: 768px) {
+  .sql-options-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sql-examples {
+    width: 100%;
+  }
+}
+
+/* ========== SQL Generator Responsive ========== */
+@media (max-width: 768px) {
+  .sql-gen-row {
+    flex-direction: column;
+  }
+
+  .sql-gen-field-grow {
+    width: 100%;
+  }
+
+  .sql-gen-columns-header,
+  .sql-gen-columns-row {
+    flex-wrap: wrap;
+  }
+
+  .sql-gen-col-name,
+  .sql-gen-col-type,
+  .sql-gen-col-val {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .sql-mode-tab {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ========== SQL Query Builder Responsive ========== */
+@media (max-width: 768px) {
+  .sql-qb-item-row {
+    flex-wrap: wrap;
+  }
+
+  .sql-qb-flex1,
+  .sql-qb-flex2 {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .sql-qb-agg,
+  .sql-qb-alias,
+  .sql-qb-join-type,
+  .sql-qb-logic,
+  .sql-qb-op,
+  .sql-qb-dir {
+    width: auto;
+    flex: 1;
+    min-width: 60px;
+  }
+
+  .sql-qb-logic-placeholder {
+    display: none;
+  }
+
+  .sql-qb-config {
+    max-height: 50vh;
+  }
+}
+
+/* ========== JSON Schema Validator Responsive ========== */
+@media (max-width: 768px) {
+  .jsv-body {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  .jsv-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .jsv-templates {
+    justify-content: center;
+  }
+}
+
+/* ========== Cron Generator Responsive ========== */
+@media (max-width: 768px) {
+  .cron-body {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  .cron-builder-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* ========== Image Compressor Responsive ========== */
+@media (max-width: 768px) {
+  .icomp-body {
+    flex-direction: column !important;
+  }
+  .icomp-right {
+    width: 100%;
+    min-width: 0;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  .icomp-settings-card {
+    position: static;
+  }
+}

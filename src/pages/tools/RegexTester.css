@@ -1,0 +1,230 @@
+/* ========== Regex Tester ========== */
+.regex-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
+  padding: 0 !important;
+}
+
+.regex-pattern-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 8px 12px;
+  gap: 4px;
+}
+
+.regex-delimiter {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.regex-pattern-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--mono);
+  font-size: 14px;
+  background: transparent;
+  color: var(--text-h);
+  padding: 4px 8px;
+}
+
+.regex-pattern-input::placeholder {
+  color: var(--text);
+  opacity: 0.4;
+}
+
+.regex-flags-display {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.regex-flags-row {
+  display: flex;
+  gap: 4px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.regex-flag-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.regex-flag-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.regex-flag-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  margin-left: 4px;
+  opacity: 0.7;
+}
+
+.regex-text-input {
+  flex: 1;
+  min-height: 120px;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.regex-replace-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.regex-replace-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.regex-replace-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--mono);
+  font-size: 13px;
+  background: transparent;
+  color: var(--text-h);
+  padding: 4px 0;
+}
+
+.regex-replace-input::placeholder {
+  color: var(--text);
+  opacity: 0.4;
+}
+
+.regex-results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.regex-highlight-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.regex-highlight-box {
+  background: var(--editor-bg);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.regex-highlight-text {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--editor-text);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.regex-match-mark {
+  background: rgba(99, 102, 241, 0.3);
+  color: var(--editor-text);
+  border-radius: 2px;
+  padding: 1px 2px;
+}
+
+.regex-match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.regex-match-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.regex-match-num {
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 24px;
+}
+
+.regex-match-value {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.regex-match-pos {
+  color: var(--text);
+  opacity: 0.5;
+  font-size: 11px;
+}
+
+.regex-match-groups {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.regex-group-tag {
+  padding: 2px 6px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.regex-replace-preview {
+  background: var(--editor-bg);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.regex-replace-text {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--editor-text);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.regex-no-match {
+  text-align: center;
+  padding: 24px;
+  color: var(--text);
+  opacity: 0.5;
+  font-size: 14px;
+}

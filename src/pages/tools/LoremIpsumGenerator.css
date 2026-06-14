@@ -1,0 +1,18 @@
+/* ========== Lorem Generator ========== */
+.lorem-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.lorem-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.lorem-count-btns {
+  display: flex;
+  gap: 4px;
+}

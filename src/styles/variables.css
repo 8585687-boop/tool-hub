@@ -1,0 +1,100 @@
+/* ========== CSS Variables ========== */
+:root {
+  /* Colors */
+  --text: #64748b;
+  --text-h: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --bg: #f1f5f9;
+  --bg-secondary: #f1f5f9;
+  --bg-hover: #e2e8f0;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --border-focus: #6366f1;
+
+  /* Accent */
+  --accent: #6366f1;
+  --accent-bg: rgba(99, 102, 241, 0.08);
+  --accent-hover: #4f46e5;
+
+  /* Semantic */
+  --green: #10b981;
+  --green-bg: rgba(16, 185, 129, 0.1);
+  --red: #ef4444;
+  --red-bg: rgba(239, 68, 68, 0.08);
+
+  /* Editor */
+  --editor-bg: #1e1e2e;
+  --editor-text: #cdd6f4;
+  --editor-border: #313244;
+  --editor-gutter: #181825;
+  --editor-placeholder: #585b70;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+
+  /* Radius */
+  --radius: 8px;
+  --radius-sm: 6px;
+  --radius-lg: 12px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  /* Layout */
+  --header-h: 56px;
+  --sidebar-w: 220px;
+
+  /* Typography */
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', ui-monospace, Consolas, monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, Consolas, monospace;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Dark Theme ========== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #94a3b8;
+    --text-h: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --bg: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-hover: #334155;
+    --surface: #1e293b;
+    --border: #334155;
+    --border-focus: #818cf8;
+    --accent: #818cf8;
+    --accent-bg: rgba(129, 140, 248, 0.1);
+    --accent-hover: #6366f1;
+    --green: #34d399;
+    --green-bg: rgba(52, 211, 153, 0.1);
+    --red: #f87171;
+    --red-bg: rgba(248, 113, 113, 0.1);
+    --editor-bg: #0f0f1a;
+    --editor-text: #cdd6f4;
+    --editor-border: #1e293b;
+    --editor-gutter: #0a0a14;
+    --editor-placeholder: #475569;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3);
+  }
+}
+
+/* ========== Global Reset ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); }
+#root { min-height: 100vh; display: flex; flex-direction: column; }

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState, useCallback } from 'react'
 import Editor from '@monaco-editor/react'
 
 const LANGUAGE_MAP = {
@@ -40,17 +40,30 @@ export default function CodeEditor({
   const lang = LANGUAGE_MAP[language] || 'plaintext'
   const placeholderRef = useRef(null)
   const editorRef = useRef(null)
+  const [ready, setReady] = useState(false)
+  const [pendingValue, setPendingValue] = useState(null)
   const displayPlaceholder = placeholder || DEFAULT_PLACEHOLDERS[language] || 'Enter text here...'
 
-  const updatePlaceholder = () => {
+  const updatePlaceholder = useCallback(() => {
     if (placeholderRef.current) {
       placeholderRef.current.style.display = editorRef.current?.getValue() ? 'none' : 'flex'
     }
-  }
+  }, [])
 
   useEffect(() => {
     updatePlaceholder()
-  }, [value])
+  }, [value, updatePlaceholder])
+
+  // Sync pending value to editor once mounted
+  useEffect(() => {
+    if (ready && editorRef.current && pendingValue !== null) {
+      const current = editorRef.current.getValue()
+      if (current !== pendingValue) {
+        editorRef.current.setValue(pendingValue)
+      }
+      setPendingValue(null)
+    }
+  }, [ready, pendingValue])
 
   const handleEditorMount = (editor, monaco) => {
     editorRef.current = editor
@@ -75,10 +88,35 @@ export default function CodeEditor({
 
     editor.onDidChangeModelContent(updatePlaceholder)
     updatePlaceholder()
+    setReady(true)
+  }
+
+  // Textarea change: update parent and buffer for later sync
+  const handleTextareaChange = (e) => {
+    const v = e.target.value
+    setPendingValue(v)
+    onChange?.(v)
   }
 
   return (
     <div className="code-editor-wrapper" translate="no">
+      {/* Textarea fallback — visible until Monaco is ready */}
+      {!ready && !readOnly && (
+        <textarea
+          className="code-editor-fallback"
+          value={pendingValue !== null ? pendingValue : value}
+          onChange={handleTextareaChange}
+          placeholder={displayPlaceholder}
+          spellCheck={false}
+          autoFocus
+        />
+      )}
+      {!ready && readOnly && (
+        <div className="code-editor-fallback code-editor-fallback-readonly">
+          {value || <span className="code-editor-fallback-placeholder">{displayPlaceholder}</span>}
+        </div>
+      )}
+
       <div
         ref={placeholderRef}
         className="code-editor-placeholder"
@@ -122,11 +160,7 @@ export default function CodeEditor({
           lineDecorationsWidth: 0,
           lineNumbersMinChars: 3,
         }}
-        loading={
-          <div className="code-editor-loading">
-            <span>Loading editor...</span>
-          </div>
-        }
+        loading={null}
       />
     </div>
   )
